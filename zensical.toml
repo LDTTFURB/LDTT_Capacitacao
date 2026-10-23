@@ -17,7 +17,16 @@ features = [
   "content.code.copy"
 ]
 
+[project.theme.palette]
+scheme = "default"
+primary = "blue"
+accent = "blue"
+
 [project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+
 pymdownx.superfences.custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
 ]

@@ -1,10 +1,10 @@
 
-# Trilha de Capacitação - Unity
+# Trilha de Capacitação - Desenvolvimento Web
 
 ## Sobre a trilha
 
-Esta trilha apresenta os conhecimentos necessários
-para iniciar projetos na área de Unity.
+Esta trilha apresenta os fundamentos necessários
+para iniciar o desenvolvimento de aplicações Web.
 
 ## Roadmap de aprendizado
 
@@ -20,4 +20,4 @@ Em construção.
 
 ## Responsáveis
 
-Equipe LDTT.
+Equipe de Desenvolvimento Web do LDTT.

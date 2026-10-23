@@ -1,5 +1,23 @@
 
 [project]
+site_url = "https://ldttfurb.github.io/LDTT_Capacitacao/"
+nav = [
+  { "Início" = "index.md" },
+  { "Unity" = [
+    { "Roadmap" = "trilhas/unity/index.md" },
+    { "Preparação do ambiente" = "trilhas/unity/01-preparacao.md" },
+    { "Fundamentos de C#" = "trilhas/unity/02-csharp.md" },
+    { "Fundamentos de Unity" = "trilhas/unity/03-fundamentos.md" },
+    { "Unity 2D" = "trilhas/unity/04-unity-2d.md" },
+    { "Base 3D e interação" = "trilhas/unity/05-base-3d.md" },
+    { "Realidade Virtual" = "trilhas/unity/06-realidade-virtual.md" },
+    { "Realidade Aumentada" = "trilhas/unity/07-realidade-aumentada.md" },
+    { "Meta Quest" = "trilhas/unity/08-meta-quest.md" },
+    { "Projeto final" = "trilhas/unity/09-projeto-final.md" },
+  ] },
+  { "Web" = "trilhas/web/index.md" },
+  { "Como participar" = "como-participar.md" },
+]
 site_name = "LDTT | HUB de Capacitação"
 site_description = "Trilhas de capacitação e materiais de estudo do LDTT/FURB"
 site_author = "LDTT - FURB"

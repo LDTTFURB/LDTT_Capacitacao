@@ -15,6 +15,7 @@ nav = [
 
 extra_javascript = [
   "assets/js/header-home.js",
+  "assets/js/trilhas-filter.js",
 ]
 
 [project.theme]

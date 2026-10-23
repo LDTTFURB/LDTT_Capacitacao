@@ -1,0 +1,23 @@
+
+[project]
+site_name = "LDTT | HUB de Capacitação"
+site_description = "Trilhas de capacitação e materiais de estudo do LDTT/FURB"
+site_author = "LDTT - FURB"
+docs_dir = "docs"
+copyright = "LDTT - Universidade Regional de Blumenau"
+
+[project.theme]
+features = [
+  "navigation.tabs",
+  "navigation.sections",
+  "navigation.indexes",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+  "content.code.copy"
+]
+
+[project.markdown_extensions]
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]

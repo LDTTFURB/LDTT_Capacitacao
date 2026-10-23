@@ -5,34 +5,33 @@ Bem-vindo ao HUB de Capacitação do Laboratório de
 Desenvolvimento e Transferência de Tecnologia (LDTT),
 da Universidade Regional de Blumenau (FURB).
 
-Este espaço reúne trilhas de aprendizagem, tutoriais
-e materiais de apoio para pessoas interessadas em
-desenvolver habilidades tecnológicas e participar
-de futuros projetos do laboratório.
+Aqui você encontrará trilhas de aprendizado, materiais
+de estudo e atividades práticas para desenvolver
+habilidades tecnológicas.
 
 ## Escolha sua trilha
 
-| Área | Conteúdo |
+| Área | Descrição |
 |---|---|
-| 🌐 [Web](trilhas/web/index.md) | Desenvolvimento Web |
-| 🎮 [Unity](trilhas/unity/index.md) | Jogos 2D, RV, RA e Meta Quest |
-| 📱 [Flutter](trilhas/flutter/index.md) | Desenvolvimento mobile |
-| 🔌 [Eletrônica](trilhas/eletronica/index.md) | Hardware e programação |
-| 🧠 [IA](trilhas/inteligencia-artificial/index.md) | Inteligência Artificial |
-| 🐍 [Python](trilhas/python/index.md) | Programação Python |
-| 📚 [Pensamento Computacional](trilhas/pensamento-computacional/index.md) | Educação e computação |
+| 🎮 [Unity](trilhas/unity/index.md) | Jogos 2D, Realidade Virtual, Realidade Aumentada e Meta Quest |
+| 🌐 [Web](trilhas/web/index.md) | Desenvolvimento de aplicações Web |
 
-## Como começar?
+!!! info "Novas trilhas"
+    Outras áreas de conhecimento serão adicionadas
+    conforme a disponibilização dos materiais.
 
-1. Escolha uma área de interesse.
-2. Siga as etapas do roadmap.
-3. Consulte os materiais recomendados.
+## Como funciona?
+
+1. Escolha uma trilha de aprendizado.
+2. Siga o roadmap na ordem recomendada.
+3. Acesse os tutoriais e materiais indicados.
 4. Realize as atividades práticas.
-5. Organize seus projetos no GitHub.
+5. Organize seus projetos e exercícios no GitHub.
 
 ## Sobre o LDTT
 
-O LDTT desenvolve projetos de Pesquisa, Desenvolvimento
+O Laboratório de Desenvolvimento e Transferência de
+Tecnologia (LDTT) atua em Pesquisa, Desenvolvimento
 e Inovação, aproximando universidade e empresas.
 
-[Conheça o laboratório](https://www.furb.br/ldtt)
+[Conheça o LDTT](https://www.furb.br/ldtt)

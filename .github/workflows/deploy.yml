@@ -29,11 +29,16 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Instalar Zensical
-        run: pip install zensical
+      
+      - name: Instalar dependencias
+        run: pip install zensical pyyaml
+
+      - name: Gerar cards dos tutoriais
+        run: python scripts/gerar_cards.py
 
       - name: Gerar site
         run: zensical build --clean
+
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v6

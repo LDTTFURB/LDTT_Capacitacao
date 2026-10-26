@@ -7,11 +7,13 @@ site_author = "LDTT - FURB"
 docs_dir = "docs"
 copyright = "LDTT - Universidade Regional de Blumenau"
 
+
 nav = [
   { "Início" = "index.md" },
   { "Trilhas" = "trilhas/index.md" },
   { "Enviar Tutorial" = "enviar-tutorial.md" },
 ]
+
 
 extra_javascript = [
   "assets/js/header-home.js",

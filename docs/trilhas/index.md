@@ -16,33 +16,21 @@ Copie um bloco <a>, altere o link (href),
 o nome, a descrição e a tag (data-tag).
 -->
 
+
 <div id="trilhas-cards" class="ldtt-grid">
 
   <a class="ldtt-card"
-     href="https://learn.unity.com/"
+     href="unity/"
      data-tag="Unity">
-    <strong>Unity Learn</strong>
-    <span>Materiais introdutórios da Unity.</span>
+
+    <strong>Unity</strong>
+    <span>Tutoriais e materiais de desenvolvimento com Unity.</span>
     <small>Unity</small>
-  </a>
 
-  <a class="ldtt-card"
-     href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development"
-     data-tag="Web">
-    <strong>HTML e CSS</strong>
-    <span>Fundamentos de desenvolvimento Web.</span>
-    <small>Web</small>
-  </a>
-
-  <a class="ldtt-card"
-     href="https://docs.python.org/pt-br/3/tutorial/"
-     data-tag="Python">
-    <strong>Python</strong>
-    <span>Introdução à programação Python.</span>
-    <small>Python</small>
   </a>
 
 </div>
+
 
 <p id="trilhas-sem-resultados" hidden>
   Nenhum tutorial encontrado.

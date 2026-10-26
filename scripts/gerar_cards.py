@@ -13,8 +13,10 @@ cards = []
 for arquivo in sorted(TUTORIAIS.glob("*/index.md")):
     texto = arquivo.read_text(encoding="utf-8")
 
-    if not texto.startswith("---\n"):
-        raise ValueError(f"Metadados ausentes: {arquivo}")
+texto = texto.lstrip("\ufeff \t\r\n")
+
+if not texto.startswith("---\n"):
+    raise ValueError(f"Metadados ausentes: {arquivo}")
 
     partes = texto.split("---", 2)
     dados = yaml.safe_load(partes[1])

@@ -12,11 +12,10 @@ cards = []
 
 for arquivo in sorted(TUTORIAIS.glob("*/index.md")):
     texto = arquivo.read_text(encoding="utf-8")
+    texto = texto.lstrip("\ufeff \t\r\n")
 
-texto = texto.lstrip("\ufeff \t\r\n")
-
-if not texto.startswith("---\n"):
-    raise ValueError(f"Metadados ausentes: {arquivo}")
+    if not texto.startswith("---\n"):
+        raise ValueError(f"Metadados ausentes: {arquivo}")
 
     partes = texto.split("---", 2)
     dados = yaml.safe_load(partes[1])
@@ -44,100 +43,5 @@ if not texto.startswith("---\n"):
 </a>
 """)
 
-pagina = """# Trilhas de Capacitação
-
-Explore os tutoriais desenvolvidos pelo LDTT.
-
-<input id="busca-tag" type="search"
-       placeholder="Buscar por tag..."
-       aria-label="Buscar por tag">
-
-<div class="ldtt-grid" id="cards">
-""" + "\n".join(cards) + """
-</div>
-
-<p id="sem-resultados" hidden>Nenhum tutorial encontrado.</p>
-
-<style>
-#busca-tag {
-  width: 100%;
-  padding: 10px;
-  margin: 12px 0 20px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
-  background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
-}
-.ldtt-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.ldtt-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 14px;
-  min-height: 110px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 10px;
-  color: inherit !important;
-  text-decoration: none !important;
-}
-.ldtt-card:hover {
-  border-color: var(--md-primary-fg-color);
-}
-.ldtt-card strong { font-size: 15px; }
-.ldtt-card span {
-  font-size: 12px;
-  color: var(--md-default-fg-color--light);
-}
-.ldtt-card small {
-  margin-top: auto;
-  color: var(--md-primary-fg-color);
-  font-size: 11px;
-}
-.ldtt-card[hidden], #sem-resultados[hidden] {
-  display: none;
-}
-@media (max-width: 900px) {
-  .ldtt-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 580px) {
-  .ldtt-grid { grid-template-columns: 1fr; }
-}
-</style>
-
-<script>
-(() => {
-  const campo = document.getElementById("busca-tag");
-  const cards = [...document.querySelectorAll(".ldtt-card")];
-  const vazio = document.getElementById("sem-resultados");
-
-  function filtrar() {
-    const termo = campo.value.trim().toLowerCase();
-    let encontrados = 0;
-
-    for (const card of cards) {
-      const tags = (card.dataset.tags || "")
-        .toLowerCase().split(",").map(t => t.trim());
-
-      const mostrar = !termo ||
-        tags.some(tag => tag.includes(termo));
-
-      card.hidden = !mostrar;
-      if (mostrar) encontrados++;
-    }
-
-    vazio.hidden = encontrados > 0;
-  }
-
-  campo.addEventListener("input", filtrar);
-  filtrar();
-})();
-</script>
-"""
-
-DESTINO.write_text(pagina, encoding="utf-8")
-print(f"Cards gerados: {len(cards)}")
-
+# Mantenha daqui para baixo o código existente:
+# pagina = ...

@@ -1,36 +1,111 @@
+
 # Trilhas
 
-Explore tutoriais e encontre o próximo passo do seu aprendizado.
+Explore tutoriais e materiais de capacitação do LDTT.
 
-<label for="trilhas-busca">Buscar por tag</label>
-<input class="md-input md-input--stretch" id="trilhas-busca" type="search" placeholder="Ex.: Unity, Web, Python" autocomplete="off" aria-controls="trilhas-cards">
+<input
+  id="trilhas-busca"
+  type="search"
+  placeholder="Buscar por tag..."
+  aria-label="Buscar por tag"
+/>
 
-<!-- Como adicionar um tutorial
-Copie o card abaixo para dentro de <ul>, junto aos outros cards.
-Altere o nome, a descrição, o link e a tag (no atributo e no texto visível).
-Use um link real para o tutorial. Sem link, mantenha apenas <strong>Nome</strong>.
-
-<li data-tag="Unity">
-  <p><a href="LINK_DO_TUTORIAL"><strong>Nome do tutorial</strong></a></p>
-  <p>Uma frase curta sobre o tutorial.</p>
-  <p><code>Unity</code></p>
-</li>
+<!--
+Para adicionar outro card:
+Copie um bloco <a>, altere o link (href),
+o nome, a descrição e a tag (data-tag).
 -->
 
-<!-- Como adicionar uma tag
-Não é preciso cadastrar tags em outro arquivo.
-Basta definir data-tag="Flutter" no card e exibir <code>Flutter</code> nele.
-A busca reconhece a nova tag automaticamente: pesquisar flutter encontrará o card.
--->
+<div id="trilhas-cards" class="ldtt-grid">
 
-<div class="grid cards" id="trilhas-cards">
-  <ul>
-    <li data-tag="Unity">
-      <p><strong>Primeiros passos com Unity (exemplo)</strong></p>
-      <p>Um exemplo de tutorial para conhecer o editor Unity.</p>
-      <p><code>Unity</code></p>
-    </li>
-  </ul>
+  <a class="ldtt-card"
+     href="https://learn.unity.com/"
+     data-tag="Unity">
+    <strong>Unity Learn</strong>
+    <span>Materiais introdutórios da Unity.</span>
+    <small>Unity</small>
+  </a>
+
+  <a class="ldtt-card"
+     href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development"
+     data-tag="Web">
+    <strong>HTML e CSS</strong>
+    <span>Fundamentos de desenvolvimento Web.</span>
+    <small>Web</small>
+  </a>
+
+  <a class="ldtt-card"
+     href="https://docs.python.org/pt-br/3/tutorial/"
+     data-tag="Python">
+    <strong>Python</strong>
+    <span>Introdução à programação Python.</span>
+    <small>Python</small>
+  </a>
+
 </div>
 
-<p id="trilhas-sem-resultados" role="status" hidden>Nenhum tutorial encontrado</p>
+<p id="trilhas-sem-resultados" hidden>
+  Nenhum tutorial encontrado.
+</p>
+
+<style>
+#trilhas-busca {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 12px 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+.ldtt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ldtt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 115px;
+  padding: 14px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+}
+
+.ldtt-card:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+.ldtt-card strong {
+  font-size: 15px;
+}
+
+.ldtt-card span {
+  font-size: 12px;
+  color: var(--md-default-fg-color--light);
+}
+
+.ldtt-card small {
+  margin-top: auto;
+  font-size: 11px;
+  color: var(--md-primary-fg-color);
+}
+
+@media (max-width: 900px) {
+  .ldtt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .ldtt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

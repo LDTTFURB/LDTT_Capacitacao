@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const base = "/LDTT_Capacitacao/";
   const atual = window.location.pathname;
 
-  // Não mostra o botão na página inicial.
-  if (atual === base || atual === base + "index.html") {
-    return;
-  }
+if (
+  atual === base ||
+  atual === base + "index.html" ||
+  atual === base + "trilhas/" ||
+  atual === base + "trilhas/index.html"
+) {
+  return;
+}
 
   const conteudo = document.querySelector(".md-content__inner");
 

@@ -30,17 +30,17 @@ def ler_metadados(arquivo):
     return dados
 
 
+
 def gerar_link(arquivo, destino):
     url = urlsplit(destino)
 
-    # Links externos: vídeos, sites e documentações.
+    # Links externos
     if url.scheme in ("http", "https") and url.netloc:
         return destino, True
 
     if url.scheme or url.netloc:
         raise ValueError("URL externa invalida")
 
-    # Arquivos Markdown internos.
     caminho = Path(destino)
 
     if (
@@ -57,11 +57,11 @@ def gerar_link(arquivo, destino):
     if not arquivo_destino.is_file():
         raise ValueError(f"Destino inexistente: {destino}")
 
-    pasta = quote(arquivo.parent.name, safe="")
+    trilha = quote(arquivo.parent.parent.parent.name, safe="")
+    tutorial = quote(arquivo.parent.name, safe="")
 
     partes = list(caminho.parts)
 
-    # index.md representa a raiz da pasta.
     if partes[-1] == "index.md":
         partes.pop()
     else:
@@ -71,13 +71,16 @@ def gerar_link(arquivo, destino):
         quote(parte, safe="") for parte in partes
     )
 
-    # O link parte de trilha/conteudo/, por isso usa ../
-    link = f"../materiais/{pasta}/"
+    link = (
+        f"/LDTT_Capacitacao/trilhas/tutoriais/"
+        f"{trilha}/materiais/{tutorial}/"
+    )
 
     if caminho_site:
         link += f"{caminho_site}/"
 
     return link, False
+
 
 
 def gerar_card(arquivo, dados):

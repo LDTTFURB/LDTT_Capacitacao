@@ -14,11 +14,16 @@ nav = [
   { "Enviar Tutorial" = "enviar-tutorial.md" },
 ]
 
-
 extra_javascript = [
   "assets/js/header-home.js",
   "assets/js/trilhas-filter.js",
+  "assets/js/voltar.js",
 ]
+
+extra_css = [
+  "assets/css/navegacao.css",
+]
+
 
 [project.theme]
 language = "pt-BR"

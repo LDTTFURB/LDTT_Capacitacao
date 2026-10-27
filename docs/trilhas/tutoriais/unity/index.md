@@ -5,7 +5,3 @@ tags:
   - Unity
 ---
 
-# Unity
-
-Os tutoriais desta área serão adicionados aqui.
-

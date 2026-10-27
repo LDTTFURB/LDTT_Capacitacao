@@ -1,10 +1,3 @@
-
----
-hide:
-  - navigation
-  - toc
----
-
 # HUB de Capacitação do LDTT
 
 ## Aprenda e desenvolva suas habilidades.

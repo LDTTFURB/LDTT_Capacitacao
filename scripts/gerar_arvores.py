@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from collections import defaultdict
 from html import escape
@@ -7,87 +6,15 @@ import re
 import yaml
 
 ROOT = Path("docs/trilhas/tutoriais")
-
-CSS = """
-<style>
-.arvore {
-  width: 100%;
-  text-align: center;
-}
-.arvore-rotulo {
-  display: block;
-  font-size: 12px;
-  opacity: .65;
-  margin-bottom: 8px;
-}
-.arvore-linha {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 8px 4px;
-}
-.arvore-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 0 0 210px;
-  padding: 14px;
-  min-height: 95px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 10px;
-  color: inherit !important;
-  text-decoration: none !important;
-  text-align: left;
-}
-.arvore-card:hover {
-  border-color: var(--md-primary-fg-color);
-}
-.arvore-card strong {
-  font-size: 14px;
-}
-.arvore-card span {
-  font-size: 12px;
-  opacity: .7;
-}
-.arvore-card + .arvore-card::before {
-  content: "";
-  position: absolute;
-  left: -21px;
-  top: 50%;
-  width: 20px;
-  border-top: 2px solid var(--md-default-fg-color--lightest);
-}
-.arvore-conector {
-  width: 2px;
-  height: 35px;
-  background: var(--md-default-fg-color--lightest);
-  margin: 0 auto;
-}
-@media (max-width: 600px) {
-  .arvore-linha {
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-  }
-  .arvore-card {
-    flex: none;
-    width: min(100%, 300px);
-  }
-  .arvore-card + .arvore-card::before {
-    display: none;
-  }
-}
-</style>
-"""
+MARCADOR = "<!-- GERAR_CARDS -->"
 
 
 def ler_metadados(arquivo):
-    texto = arquivo.read_text(encoding="utf-8-sig").lstrip()
+    texto = arquivo.read_text(encoding="utf-8-sig")
+    texto = texto.lstrip(" \t\r\n")
 
     resultado = re.match(
-        r"^---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|$)",
+        r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\Z)",
         texto,
         re.DOTALL
     )
@@ -100,140 +27,274 @@ def ler_metadados(arquivo):
     if not isinstance(dados, dict):
         raise ValueError(f"Metadados invalidos: {arquivo}")
 
-    cabecalho = texto[:resultado.end()].rstrip()
-    return dados, cabecalho
+    return dados
 
 
-def obter_destino(arquivo, destino):
+def gerar_link(arquivo, destino):
     url = urlsplit(destino)
 
+    # Links externos: vídeos, sites e documentações.
     if url.scheme in ("http", "https") and url.netloc:
         return destino, True
 
     if url.scheme or url.netloc:
         raise ValueError("URL externa invalida")
 
+    # Arquivos Markdown internos.
     caminho = Path(destino)
 
-    if (caminho.is_absolute()
+    if (
+        caminho.is_absolute()
         or ".." in caminho.parts
-        or caminho.suffix.lower() != ".md"):
-        raise ValueError("Destino deve ser um arquivo .md relativo")
+        or caminho.suffix.lower() != ".md"
+        or url.query
+        or url.fragment
+    ):
+        raise ValueError("Destino Markdown invalido")
 
-    if not (arquivo.parent / caminho).is_file():
-        raise ValueError(f"Arquivo de destino inexistente: {destino}")
+    arquivo_destino = arquivo.parent / caminho
 
-    relativo = caminho.with_suffix("")
+    if not arquivo_destino.is_file():
+        raise ValueError(f"Destino inexistente: {destino}")
 
-    if caminho.stem == "index":
-        relativo = caminho.parent
+    pasta = quote(arquivo.parent.name, safe="")
 
-    pasta = quote(arquivo.parent.name)
-    pagina = relativo.as_posix()
+    partes = list(caminho.parts)
 
-    link = f"materiais/{pasta}/"
+    # index.md representa a raiz da pasta.
+    if partes[-1] == "index.md":
+        partes.pop()
+    else:
+        partes[-1] = Path(partes[-1]).stem
 
-    if pagina != ".":
-        link += quote(pagina, safe="/") + "/"
+    caminho_site = "/".join(
+        quote(parte, safe="") for parte in partes
+    )
+
+    # O link parte de trilha/conteudo/, por isso usa ../
+    link = f"../materiais/{pasta}/"
+
+    if caminho_site:
+        link += f"{caminho_site}/"
 
     return link, False
 
 
-def gerar_arvore(trilha):
-    raiz = trilha / "index.md"
+def gerar_card(arquivo, dados):
+    titulo = dados.get("title")
+    descricao = dados.get("description")
+    nivel = dados.get("nivel")
+    destino = dados.get("destino")
 
-    if not raiz.is_file():
-        return
+    if not isinstance(titulo, str) or not titulo.strip():
+        raise ValueError("title invalido")
 
-    arquivos = sorted(
-        (trilha / "materiais").glob("*/index.md")
-    )
+    if not isinstance(descricao, str):
+        raise ValueError("description invalida")
 
-    if not arquivos:
-        return
+    if type(nivel) is not int or nivel < 0:
+        raise ValueError("nivel deve ser um inteiro >= 0")
 
-    grupos = defaultdict(list)
+    if not isinstance(destino, str) or not destino.strip():
+        raise ValueError("destino invalido")
 
-    for arquivo in arquivos:
-        try:
-            dados, _ = ler_metadados(arquivo)
+    link, externo = gerar_link(arquivo, destino.strip())
 
-            titulo = dados.get("title")
-            descricao = dados.get("description")
-            nivel = dados.get("nivel")
-            destino = dados.get("destino")
+    atributos = ""
 
-            if not isinstance(titulo, str) or not titulo.strip():
-                raise ValueError("title invalido")
+    if externo:
+        atributos = ' target="_blank" rel="noopener noreferrer"'
 
-            if not isinstance(descricao, str):
-                raise ValueError("description invalida")
+    card = f"""
+<a class="arvore-card"
+   href="{escape(link, quote=True)}"{atributos}>
+  <strong>{escape(titulo)}</strong>
+  <span>{escape(descricao)}</span>
+</a>
+"""
 
-            if type(nivel) is not int or nivel < 0:
-                raise ValueError("nivel deve ser inteiro >= 0")
+    return nivel, card
 
-            if not isinstance(destino, str) or not destino.strip():
-                raise ValueError("destino invalido")
 
-            link, externo = obter_destino(arquivo, destino.strip())
+CSS = """
+<style>
+.ldtt-arvore {
+  width: 100%;
+  margin: 24px 0;
+}
 
-            extra = ' target="_blank" rel="noopener noreferrer"' if externo else ""
+.arvore-nivel {
+  text-align: center;
+}
 
-            card = (
-                f'<a class="arvore-card" href="{escape(link, quote=True)}"{extra}>'
-                f'<strong>{escape(titulo)}</strong>'
-                f'<span>{escape(descricao)}</span>'
-                '</a>'
-            )
+.arvore-rotulo {
+  display: block;
+  font-size: 12px;
+  opacity: 0.65;
+  margin-bottom: 8px;
+}
 
-            grupos[nivel].append((titulo.lower(), card))
+.arvore-linha {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 8px 4px;
+  overflow-x: auto;
+}
 
-        except (ValueError, yaml.YAMLError) as erro:
-            print(f"AVISO: {arquivo}: {erro}")
+.arvore-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 200px;
+  gap: 8px;
+  min-height: 95px;
+  padding: 14px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  color: inherit !important;
+  text-decoration: none !important;
+  text-align: left;
+  transition: border-color 0.2s;
+}
 
+.arvore-card:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+.arvore-card strong {
+  font-size: 14px;
+}
+
+.arvore-card span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.arvore-card + .arvore-card::before {
+  content: "";
+  position: absolute;
+  left: -21px;
+  top: 50%;
+  width: 20px;
+  border-top: 2px solid var(--md-default-fg-color--lightest);
+}
+
+.arvore-conector {
+  height: 35px;
+  width: 2px;
+  margin: 0 auto;
+  background: var(--md-default-fg-color--lightest);
+}
+
+@media (max-width: 600px) {
+  .arvore-linha {
+    justify-content: flex-start;
+  }
+
+  .arvore-card {
+    flex-basis: 180px;
+  }
+}
+</style>
+"""
+
+
+def montar_arvore(grupos):
     if not grupos:
-        print(f"Nenhum tutorial valido em {trilha.name}")
-        return
+        return "<p>Nenhum tutorial cadastrado ainda.</p>"
 
-    info, cabecalho = ler_metadados(raiz)
-    nome = str(info.get("title") or trilha.name)
-
-    partes = [
-        cabecalho,
-        f"# {escape(nome)}",
-        '<div class="arvore">'
-    ]
+    partes = ['<div class="ldtt-arvore">']
 
     niveis = sorted(grupos)
 
     for indice, nivel in enumerate(niveis):
-        partes.append(
-            f'<div class="arvore-nivel">'
-            f'<small class="arvore-rotulo">Nível {nivel}</small>'
-            '<div class="arvore-linha">'
-        )
+        partes.append(f"""
+<div class="arvore-nivel">
+  <small class="arvore-rotulo">Nível {nivel}</small>
+  <div class="arvore-linha">
+""")
 
-        for _, card in sorted(grupos[nivel]):
+        for card in grupos[nivel]:
             partes.append(card)
 
-        partes.append("</div></div>")
+        partes.append("""
+  </div>
+</div>
+""")
 
         if indice < len(niveis) - 1:
             partes.append(
                 '<div class="arvore-conector" aria-hidden="true"></div>'
             )
 
-    partes.extend(["</div>", CSS])
+    partes.append("</div>")
+    partes.append(CSS)
 
-    raiz.write_text(
-        "\n\n".join(partes) + "\n",
+    return "\n".join(partes)
+
+
+def processar_trilha(trilha):
+    arquivo_index = trilha / "index.md"
+    arquivo_conteudo = trilha / "conteudo.md"
+    pasta_materiais = trilha / "materiais"
+
+    if not arquivo_index.is_file():
+        return
+
+    # A trilha precisa ter uma página de conteúdo.
+    if not arquivo_conteudo.is_file():
+        print(f"AVISO: {trilha.name} sem conteudo.md")
+        return
+
+    texto_original = arquivo_conteudo.read_text(encoding="utf-8")
+
+    # Preserva todo o conteúdo caso não exista o marcador.
+    if MARCADOR not in texto_original:
+        print(f"AVISO: {trilha.name} sem marcador GERAR_CARDS")
+        return
+
+    grupos = defaultdict(list)
+
+    if pasta_materiais.exists():
+        arquivos = sorted(
+            pasta_materiais.glob("*/index.md"),
+            key=lambda p: p.parent.name.lower()
+        )
+
+        for arquivo in arquivos:
+            try:
+                dados = ler_metadados(arquivo)
+                nivel, card = gerar_card(arquivo, dados)
+
+                grupos[nivel].append(card)
+
+            except (ValueError, yaml.YAMLError) as erro:
+                print(f"AVISO: {arquivo}: {erro}")
+
+    arvore = montar_arvore(grupos)
+
+    # Substitui somente o marcador.
+    texto_final = texto_original.replace(MARCADOR, arvore, 1)
+
+    # Altera o arquivo apenas no ambiente temporário do build.
+    arquivo_conteudo.write_text(
+        texto_final,
         encoding="utf-8"
     )
 
-    total = sum(len(grupo) for grupo in grupos.values())
-    print(f"{trilha.name}: {total} tutoriais em {len(niveis)} niveis")
+    total = sum(len(cards) for cards in grupos.values())
+
+    print(
+        f"{trilha.name}: {total} tutoriais "
+        f"em {len(grupos)} niveis"
+    )
 
 
-for trilha in sorted(ROOT.iterdir()):
-    if trilha.is_dir():
-        gerar_arvore(trilha)
+if ROOT.exists():
+    for trilha in sorted(
+        ROOT.iterdir(),
+        key=lambda p: p.name.lower()
+    ):
+        if trilha.is_dir():
+            processar_trilha(trilha)

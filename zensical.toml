@@ -11,7 +11,7 @@ copyright = "Laboratório de Desenvolvimento e Transferência  de Tecnologia (LD
 nav = [
   { "Início" = "index.md" },
   { "Trilhas" = "trilhas/index.md" },
-  { "Enviar Tutorial" = "docs/trilhas/tutoriais/como-criar-tutorial/conteudo.md" },
+  { "Enviar Tutorial" = "trilhas/tutoriais/como-criar-tutorial/conteudo/" },
 ]
 
 extra_javascript = [

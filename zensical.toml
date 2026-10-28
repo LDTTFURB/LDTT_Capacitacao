@@ -5,13 +5,13 @@ site_url = "https://ldttfurb.github.io/LDTT_Capacitacao/"
 site_description = "HUB de Capacitação do LDTT/FURB"
 site_author = "LDTT - FURB"
 docs_dir = "docs"
-copyright = "LDTT - Universidade Regional de Blumenau"
+copyright = "Laboratório de Desenvolvimento e Transferência  de Tecnologia (LDTT)"
 
 
 nav = [
   { "Início" = "index.md" },
   { "Trilhas" = "trilhas/index.md" },
-  { "Enviar Tutorial" = "enviar-tutorial.md" },
+  { "Enviar Tutorial" = "docs/trilhas/tutoriais/como-criar-tutorial/conteudo.md" },
 ]
 
 extra_javascript = [
@@ -36,6 +36,11 @@ features = [
 scheme = "default"
 primary = "blue"
 accent = "blue"
+
+
+[project.extra]
+generator = false
+
 
 [project.plugins.search]
 enabled = false

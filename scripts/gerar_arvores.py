@@ -208,6 +208,7 @@ CSS = """
 """
 
 
+
 def montar_arvore(grupos):
     if not grupos:
         return "<p>Nenhum tutorial cadastrado ainda.</p>"
@@ -217,10 +218,10 @@ def montar_arvore(grupos):
     niveis = sorted(grupos)
 
     for indice, nivel in enumerate(niveis):
-       partes.append("""
-       <div class="arvore-nivel">
-           <div class="arvore-linha">
-        """)
+        partes.append("""
+<div class="arvore-nivel">
+  <div class="arvore-linha">
+""")
 
         for _, _, card in sorted(grupos[nivel]):
             partes.append(card)
@@ -239,6 +240,7 @@ def montar_arvore(grupos):
     partes.append(CSS)
 
     return "\n".join(partes)
+
 
 
 def processar_trilha(trilha):
@@ -269,17 +271,19 @@ def processar_trilha(trilha):
             key=lambda p: p.parent.name.lower()
         )
 
+       
         for arquivo in arquivos:
             try:
                 dados = ler_metadados(arquivo)
                 nivel, ordem, card = gerar_card(arquivo, dados)
 
                 grupos[nivel].append(
-                (ordem, arquivo.parent.name.lower(), card)
-        )
+                    (ordem, arquivo.parent.name.lower(), card)
+                )
 
             except (ValueError, yaml.YAMLError) as erro:
                 print(f"AVISO: {arquivo}: {erro}")
+
 
     arvore = montar_arvore(grupos)
 

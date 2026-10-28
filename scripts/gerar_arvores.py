@@ -217,9 +217,8 @@ def montar_arvore(grupos):
     niveis = sorted(grupos)
 
     for indice, nivel in enumerate(niveis):
-        partes.append(f"""
+       partes.append("""
 <div class="arvore-nivel">
-  <small class="arvore-rotulo">Nível {nivel}</small>
   <div class="arvore-linha">
 """)
 

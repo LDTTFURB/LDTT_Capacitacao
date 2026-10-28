@@ -116,7 +116,12 @@ def gerar_card(arquivo, dados):
 </a>
 """
 
-    return nivel, card
+    ordem = dados.get("ordem", 0)
+
+if type(ordem) is not int or ordem < 0:
+    raise ValueError("ordem deve ser um inteiro >= 0")
+
+return nivel, ordem, card
 
 
 CSS = """
@@ -218,8 +223,8 @@ def montar_arvore(grupos):
   <div class="arvore-linha">
 """)
 
-        for card in grupos[nivel]:
-            partes.append(card)
+        for _, _, card in sorted(grupos[nivel]):
+        partes.append(card)
 
         partes.append("""
   </div>
@@ -268,9 +273,11 @@ def processar_trilha(trilha):
         for arquivo in arquivos:
             try:
                 dados = ler_metadados(arquivo)
-                nivel, card = gerar_card(arquivo, dados)
+                nivel, ordem, card = gerar_card(arquivo, dados)
 
-                grupos[nivel].append(card)
+                grupos[nivel].append(
+                (ordem, arquivo.parent.name.lower(), card)
+        )
 
             except (ValueError, yaml.YAMLError) as erro:
                 print(f"AVISO: {arquivo}: {erro}")

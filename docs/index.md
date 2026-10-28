@@ -7,13 +7,6 @@ Desenvolvimento e Transferência de Tecnologia (LDTT),
 da Universidade Regional de Blumenau (FURB).
 
 Explore trilhas de aprendizado e tutoriais
-desenvolvidos pela equipe do laboratório.
+desenvolvidos pela equipe do LDTT.
 
 [Explorar trilhas →](trilhas/index.md){ .md-button .md-button--primary }
-
----
-
-**LDTT — Universidade Regional de Blumenau (FURB)**
-
-[Site institucional](https://www.furb.br/ldtt) ·
-[Projetos desenvolvidos](https://ldtt.furb.br/projetos)

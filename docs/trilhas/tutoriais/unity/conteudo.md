@@ -8,9 +8,3 @@ por uma sequência de aprendizado.
 ## Tutoriais
 
 <!-- GERAR_CARDS -->
-
-## Materiais complementares
-
-Adicione aqui outros textos, vídeos ou links
-que possam ajudar no aprendizado.
-

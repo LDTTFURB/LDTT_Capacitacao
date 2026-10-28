@@ -218,9 +218,9 @@ def montar_arvore(grupos):
 
     for indice, nivel in enumerate(niveis):
        partes.append("""
-<div class="arvore-nivel">
-  <div class="arvore-linha">
-""")
+       <div class="arvore-nivel">
+           <div class="arvore-linha">
+        """)
 
         for _, _, card in sorted(grupos[nivel]):
             partes.append(card)

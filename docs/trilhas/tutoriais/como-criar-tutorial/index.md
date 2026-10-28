@@ -1,8 +1,6 @@
-
 ---
 title: "Como criar um tutorial"
-description: "Aprenda a publicar materiais no HUB do LDTT."
-nivel: 0
-ordem: 0
-destino: "conteudo.md"
+description: "Aprenda a publicar tutoriais no HUB do LDTT."
+tags:
+  - Outros
 ---

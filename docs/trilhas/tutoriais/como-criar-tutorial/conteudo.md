@@ -1,76 +1,59 @@
 
-# Como criar um tutorial
+## Como gerar os cards dentro de uma trilha
 
-Para compartilhar um material no HUB do LDTT,
-basta criar uma pasta com dois arquivos Markdown.
+Para mostrar os tutoriais cadastrados dentro de uma
+trilha, utilizamos o marcador:
 
-## 1. Crie sua pasta
+`<!-- GERAR_CARDS -->`
 
-No GitHub, acesse a trilha desejada e entre na
-pasta `materiais/`.
+### 1. Adicione o marcador
 
-Clique em **Add file → Create new file**.
-
-No nome do arquivo, digite:
-
-`nome-do-tutorial/index.md`
-
-Use um nome curto, sem espaços ou acentos.
-
-## 2. Configure o card
-
-No `index.md`, cole:
-
-```yaml
----
-title: "Nome do tutorial"
-description: "Breve descrição do material."
-nivel: 0
-ordem: 0
-destino: "conteudo.md"
----
-```
-
-- **title:** nome exibido no card.
-- **description:** descrição curta.
-- **nivel:** linha da árvore (0, 1, 2...).
-- **ordem:** posição do card dentro do nível.
-- **destino:** arquivo ou link que será aberto.
-
-## 3. Escreva o conteúdo
-
-Na mesma pasta, crie `conteudo.md`.
+No arquivo `conteudo.md` da trilha, coloque o marcador
+onde deseja que os cards apareçam.
 
 Exemplo:
 
-```md
-# Meu primeiro tutorial
+# Unity
 
-## Introdução
+Bem-vindo à trilha Unity!
 
-Explique brevemente o que será ensinado.
+Aqui você encontrará materiais para começar.
 
-## Passo a passo
+## Tutoriais
 
-1. Primeiro passo.
-2. Segundo passo.
-3. Terceiro passo.
+<!-- GERAR_CARDS -->
 
-## Resultado
+## Informações adicionais
 
-Mostre o resultado final.
-```
+Outras informações podem ser escritas aqui.
 
-Você pode adicionar imagens, vídeos e links
-para materiais complementares.
+### 2. Como funciona?
 
-## 4. Publique
+O HUB procura automaticamente os tutoriais dentro
+da pasta `materiais/` da trilha.
 
-Clique em **Commit changes** para salvar os arquivos.
+Cada tutorial encontrado é organizado de acordo
+com os campos `nivel` e `ordem` do seu `index.md`.
 
-Após a publicação pelo GitHub Actions,
-o novo tutorial aparecerá automaticamente
-na árvore da trilha escolhida.
+O sistema gera os cards no lugar do marcador,
+sem precisar escrever HTML ou editar scripts.
 
-Pronto! Não é necessário editar os cards
-nem modificar nenhum script.
+### 3. Resultado
+
+Se a pasta `materiais/` possuir três tutoriais:
+
+- Fundamentos Unity (nível 0)
+- Fundamentos Programação (nível 0)
+- Configurar Build Android (nível 1)
+
+Os dois primeiros aparecerão lado a lado, e o
+terceiro aparecerá abaixo, conectado aos anteriores.
+
+### Importante
+
+- Utilize apenas um `<!-- GERAR_CARDS -->` por trilha.
+- Você pode escrever textos, adicionar imagens e links
+  antes ou depois do marcador.
+- Não é necessário criar os cards manualmente.
+- Novos tutoriais aparecerão automaticamente após
+  a publicação pelo GitHub Actions.

@@ -118,10 +118,10 @@ def gerar_card(arquivo, dados):
 
     ordem = dados.get("ordem", 0)
 
-if type(ordem) is not int or ordem < 0:
-    raise ValueError("ordem deve ser um inteiro >= 0")
+    if type(ordem) is not int or ordem < 0:
+       raise ValueError("ordem deve ser um inteiro >= 0")
 
-return nivel, ordem, card
+    return nivel, ordem, card
 
 
 CSS = """

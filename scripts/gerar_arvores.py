@@ -224,7 +224,7 @@ def montar_arvore(grupos):
 """)
 
         for _, _, card in sorted(grupos[nivel]):
-        partes.append(card)
+            partes.append(card)
 
         partes.append("""
   </div>

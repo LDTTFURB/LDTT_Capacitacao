@@ -249,9 +249,18 @@ def montar_arvore(grupos):
 
 CSS_HIERARQUIA = """
 <style>
-.arvore-hierarquia { --linha: var(--md-default-fg-color--lightest); margin: 24px 0; }
-.md-typeset .arvore-hierarquia ul { list-style: none; padding: 0; margin: 0; }
-.md-typeset .arvore-hierarquia li { list-style: none; margin: 0; position: relative; min-width: 0; }
+.arvore-hierarquia {
+  --linha: var(--md-default-fg-color--lightest);
+  --conector: var(--md-default-fg-color--lighter, #d9dde3);
+  --espaco-ramos: 20px;
+  margin: 24px 0;
+}
+/* Reinicia tambem os espacamentos de listas aplicados pelo tema. */
+.md-typeset nav.arvore-hierarquia ul,
+.md-typeset nav.arvore-hierarquia ul > li {
+  list-style: none; margin: 0; padding: 0; min-width: 0; box-sizing: border-box;
+}
+.md-typeset nav.arvore-hierarquia ul > li { position: relative; }
 .arvore-hierarquia .arvore-card {
   display: flex; flex-direction: column; gap: 8px; padding: 14px;
   border: 1px solid var(--linha); border-radius: 10px; color: inherit;
@@ -261,48 +270,65 @@ CSS_HIERARQUIA = """
 .arvore-hierarquia .arvore-card:focus-visible { border-color: var(--md-primary-fg-color); }
 .arvore-hierarquia .arvore-card strong { font-size: 14px; }
 .arvore-hierarquia .arvore-card span { font-size: 12px; opacity: .75; }
-.arvore-hierarquia .arvore-raiz > .arvore-card { max-width: 360px; margin: 0 auto; }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos {
-  display: flex; align-items: flex-start; gap: 20px; padding-top: 40px;
+.arvore-hierarquia .arvore-raiz > .arvore-card {
+  position: relative; max-width: 360px; margin: 0 auto;
 }
-.arvore-hierarquia .arvore-raiz > .arvore-card { position: relative; }
 .arvore-hierarquia .arvore-raiz > .arvore-card::after {
   content: ''; position: absolute; left: 50%; top: 100%; height: 20px;
-  border-left: 2px solid var(--linha);
+  border-left: 2px solid var(--conector);
 }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos { position: relative; }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos > li { flex: 1 1 0; }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos > li::before {
-  content: ''; position: absolute; top: -20px; left: -10px; right: -10px;
-  height: 20px; border-top: 2px solid var(--linha);
+/* Cada filho desenha o seu segmento vertical e o cotovelo ate o card.
+   O ultimo segmento termina na ligacao, sem prolongar a linha para baixo. */
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos {
+  margin-left: 12px; padding-left: 20px;
 }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos > li:first-child::before { left: 50%; }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos > li:last-child::before { right: 50%; }
-.arvore-hierarquia .arvore-raiz > .arvore-filhos > li::after {
-  content: ''; position: absolute; left: 50%; top: -20px; height: 20px;
-  border-left: 2px solid var(--linha);
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li { padding-top: 16px; }
+.arvore-hierarquia ul.arvore-filhos > li::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -20px;
+  border-left: 2px solid var(--conector);
 }
-.arvore-hierarquia .arvore-filhos .arvore-filhos {
-  margin: 0 0 0 12px; padding: 0 0 0 16px; border-left: 2px solid var(--linha);
+.arvore-hierarquia ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
+.arvore-hierarquia ul.arvore-filhos > li::after {
+  content: ''; position: absolute; left: -20px; top: 38px; width: 20px;
+  border-top: 2px solid var(--conector);
 }
-.arvore-hierarquia .arvore-filhos .arvore-filhos > li { padding-top: 16px; }
-.arvore-hierarquia .arvore-filhos .arvore-filhos > li::before {
-  content: ''; position: absolute; left: -16px; top: 38px; width: 16px;
-  border-top: 2px solid var(--linha);
+/* A linha horizontal cobre o intervalo inteiro entre os ramos da raiz. */
+.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
+  display: flex; align-items: flex-start; gap: var(--espaco-ramos);
+  margin: 0; padding: 40px 0 0;
+}
+.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li {
+  flex: 1 1 0; padding: 0;
+}
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before {
+  top: -20px; bottom: auto; left: calc(var(--espaco-ramos) / -2);
+  right: calc(var(--espaco-ramos) / -2); height: 0;
+  border: 0; border-top: 2px solid var(--conector);
+}
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before { left: 50%; }
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before { right: 50%; height: 0; }
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
+  left: 50%; top: -20px; width: 0; height: 20px;
+  border: 0; border-left: 2px solid var(--conector);
 }
 @media (max-width: 900px) {
   .arvore-hierarquia .arvore-raiz > .arvore-card { margin: 0; max-width: none; }
   .arvore-hierarquia .arvore-raiz > .arvore-card::after { display: none; }
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos {
-    display: block; margin-left: 12px; padding: 0 0 0 16px; border-left: 2px solid var(--linha);
+  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
+    display: block; margin-left: 12px; padding: 0 0 0 20px;
   }
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li { padding-top: 16px; }
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li::before,
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li:first-child::before,
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li:last-child::before {
-    left: -16px; right: auto; top: 38px; width: 16px; height: 0;
+  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li { padding-top: 16px; }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before,
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before,
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before {
+    top: 0; bottom: 0; left: -20px; right: auto; height: auto;
+    border: 0; border-left: 2px solid var(--conector);
   }
-  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li::after { display: none; }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
+    left: -20px; top: 38px; width: 20px; height: 0;
+    border: 0; border-top: 2px solid var(--conector);
+  }
 }
 </style>
 """

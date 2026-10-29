@@ -1,6 +1,4 @@
-# Primeira execução e exploração do projeto
-
-> Ramificação: **Unity**.
+# Introdução à Unity
 
 ## Objetivo
 
@@ -8,7 +6,12 @@ Abra o projeto, execute a cena inicial e reconheça seus principais elementos.
 
 ## Pré-requisitos
 
-Concluir [Preparação do ambiente e acessos](../01-preparacao-do-ambiente/conteudo.md) e [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md), da ramificação Git/GitHub. Tenha a pasta do projeto no computador e a versão correta do Editor instalada.
+Concluir [Introdução geral](../01-preparacao-do-ambiente/conteudo.md) e [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md), da ramificação Git/GitHub. Tenha a pasta do projeto no computador e a versão correta do Editor instalada.
+
+## O que você vai aprender
+
+A Unity é o motor de jogo usado no projeto. O Editor reúne as ferramentas para organizar cenas, configurar objetos e executar o jogo. Nesta introdução, você abrirá o projeto e conhecerá suas janelas principais. Depois, os conteúdos filhos ajudam a estudar interface, áudio e uma primeira alteração prática.
+
 
 ## Abra no Unity Hub
 
@@ -78,6 +81,16 @@ Não é necessário concluir os dois cursos para seguir a trilha. Alterne os tre
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[Próximo nesta ramificação: Interface: resolução, painéis e desempenho →](../08-interface-e-desempenho/conteudo.md)
+**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
+
+**Aprofunde este assunto:**
+
+- [Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md).
+- [Áudio: organização e reprodução](../09-audio/conteudo.md).
+- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
+
+**Conteúdos relacionados:**
+
+- [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md).

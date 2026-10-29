@@ -1,22 +1,20 @@
 # Nomenclatura e organização de arquivos
 
-> Ramificação: **C\# e boas práticas**.
-
 ## Objetivo
 
 Use os padrões de nomes de código e recursos (assets) do LDTT e entenda como preservar as referências entre os arquivos do projeto.
 
 ## Pré-requisitos
 
-Revisar [Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md) e concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md). Para comparar os nomes, você precisa reconhecer variáveis, classes e os arquivos principais do projeto.
+Revisar [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md) e concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md). Para comparar os nomes, você precisa reconhecer variáveis, classes e os arquivos principais do projeto.
 
-## 1. Regras gerais
+## Regras gerais
 
 Use nomes **em inglês** que indiquem a função do elemento. Por exemplo, `score` comunica melhor uma pontuação do que `value`. Para classes e tipos, comece com maiúscula; para variáveis públicas e locais, comece com minúscula. Em nomes compostos, cada palavra seguinte começa com maiúscula. Quando números fizerem parte do nome, siga o formato dos exemplos do laboratório: `01`, `02`.
 
 O formato de `GameManager` é chamado de **PascalCase**; o de `arrayAmount`, de **camelCase**. Nas tabelas abaixo, prefixo é uma parte acrescentada ao início do nome, e sufixo é uma parte acrescentada ao final.
 
-## 2. Código e prefabs
+## Código e prefabs
 
 | Elemento | Convenção do laboratório | Exemplos |
 | --- | --- | --- |
@@ -34,7 +32,7 @@ O formato de `GameManager` é chamado de **PascalCase**; o de `arrayAmount`, de 
 
 Um evento é uma notificação enviada pelo código, e o método assinante é o método que responde a ela. Por exemplo, `OnHit` pode ser o evento e `Character_OnHit` o método que reage a ele. O material [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md) explica essa relação com mais detalhes.
 
-## 3. Animação, sprites e áudio
+## Animação, sprites e áudio
 
 | Asset ou script | Convenção | Exemplo |
 | --- | --- | --- |
@@ -46,7 +44,7 @@ Um evento é uma notificação enviada pelo código, e o método assinante é o 
 | Efeito sonoro | Prefixo `SFX_`; nome com objeto relacionado e ação | `SFX_CoinDrop` |
 | Música | Prefixo `OST_` | `OST_MenuTheme` |
 
-## 4. Cuidados com arquivos Unity
+## Cuidados com arquivos Unity
 
 As orientações abaixo complementam o guia para o trabalho em equipe:
 
@@ -57,7 +55,7 @@ As orientações abaixo complementam o guia para o trabalho em equipe:
 - Evite misturar sua tarefa com reorganizações amplas ou alterações de configuração sem relação com ela.
 - Não inclua senhas, tokens ou credenciais nos arquivos enviados ao repositório.
 
-## 5. Exercício de revisão
+## Exercício de revisão
 
 1. Escolha um script, uma variável privada, um prefab, um sprite e um áudio do projeto, quando existirem.
 2. Compare seus nomes com as tabelas acima.
@@ -74,8 +72,10 @@ As orientações abaixo complementam o guia para o trabalho em equipe:
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md)
+**Conteúdo pai:** [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md).
 
-[Próximo nesta ramificação: C\#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)
+**Conteúdos relacionados:**
+
+- [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md).

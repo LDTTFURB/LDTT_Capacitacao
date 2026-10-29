@@ -9,7 +9,7 @@ Neste guia, você aprenderá a publicar seu próprio tutorial no GitHub.
 
 ---
 
-## 1. Entenda a estrutura
+## Entenda a estrutura
 
 O HUB possui dois tipos de conteúdo:
 
@@ -29,11 +29,11 @@ Cada conteúdo possui dois arquivos:
 
 ---
 
-## 2. Como criar uma nova trilha
+## Como criar uma nova trilha
 
 Se o assunto ainda não possui uma trilha, você pode criar uma.
 
-### Passo 1 — Criar a pasta
+### Criar a pasta
 
 No [repositório do LDTT](https://github.com/LDTTFURB/LDTT_Capacitacao), acesse:
 
@@ -49,7 +49,7 @@ O GitHub criará o caminho ao salvar o arquivo.
 
 Use nomes sem espaços ou acentos, por exemplo `python`, `unity` ou `desenvolvimento-web`.
 
-### Passo 2 — Preencher o index.md
+### Preencher o index.md
 
 Copie o exemplo:
 
@@ -79,7 +79,7 @@ tags:
 
 Não é necessário cadastrar as tags em outro lugar.
 
-### Passo 3 — Criar o conteudo.md
+### Criar o conteudo.md
 
 Na mesma pasta, crie `conteudo.md`.
 
@@ -103,7 +103,7 @@ Adicione textos, vídeos e links.
 
 ---
 
-## 3. Como adicionar um tutorial a uma trilha existente
+## Como adicionar um tutorial a uma trilha existente
 
 Se você deseja adicionar um tutorial de Unity, por exemplo, **não precisa criar outra trilha**.
 
@@ -111,7 +111,7 @@ Acesse:
 
 `docs/trilhas/tutoriais/unity/materiais/`
 
-### Passo 1 — Criar a pasta do tutorial
+### Criar a pasta do tutorial
 
 Clique em **Add file → Create new file**.
 
@@ -129,7 +129,7 @@ unity/
         └── conteudo.md
 ```
 
-### Passo 2 — Configurar o card
+### Configurar o card
 
 No `index.md`, utilize:
 
@@ -137,6 +137,7 @@ No `index.md`, utilize:
 ---
 title: "Meu primeiro tutorial"
 description: "Aprenda a realizar uma tarefa na Unity."
+pai: null
 nivel: 0
 ordem: 0
 destino: "conteudo.md"
@@ -149,65 +150,66 @@ destino: "conteudo.md"
 |---|---|
 | `title` | Nome do card. |
 | `description` | Descrição curta. |
-| `nivel` | Define em qual linha da árvore o card aparece. |
-| `ordem` | Define a posição entre os cards do mesmo nível. |
+| `nivel` | Profundidade do conteúdo: raiz em `0`, filhos em `1`, netos em `2` e assim por diante. |
+| `ordem` | Define a posição entre conteúdos com o mesmo pai. |
 | `destino` | Define o arquivo ou link aberto ao clicar. |
-| `ramo` | Opcional. Nome da ramificação, como Unity ou Git/GitHub. |
-| `etapa` | Opcional. Ordena os blocos de ramificações; começa em `0`. |
-| `ordem_ramo` | Opcional. Ordena as ramificações dentro da mesma etapa; começa em `0`. |
+| `pai` | Nome exato da pasta do conteúdo pai; use `null` na raiz. |
 
-### Como funcionam os níveis?
+### Como montar uma árvore de conteúdos?
 
-Os tutoriais são apresentados em uma árvore de aprendizado.
-
-- `nivel: 0` — primeira linha.
-- `nivel: 1` — segunda linha.
-- `nivel: 2` — terceira linha.
-
-Tutoriais do mesmo nível aparecem lado a lado.
-
-### Como funciona a ordem?
-
-O campo `ordem` é opcional.
-
-- `ordem: 0` — posição padrão.
-- `ordem: 1`, `2`, `3`... — permitem reorganizar os cards.
-
-Quando os valores são iguais, os cards seguem a ordem alfabética dos nomes das pastas.
-
-### Como criar ramificações por assunto?
-
-Use ramificações quando uma trilha reunir assuntos que podem ser consultados separadamente. No `index.md` de cada material, acrescente os campos abaixo:
+Cada material informa seu pai no `index.md`. A introdução geral é a raiz da árvore e utiliza:
 
 ```yaml
-ramo: 'Unity'
-etapa: 1
-ordem_ramo: 0
+title: 'Introdução geral'
+pai: null
 nivel: 0
 ordem: 0
 ```
 
-Nesse exemplo, o tutorial aparece no primeiro nível da ramificação Unity. Para colocar outro material abaixo dele, mantenha `ramo`, `etapa` e `ordem_ramo` e use `nivel: 1`.
+Para ligar a introdução à Unity à introdução geral, use o nome da pasta da introdução geral:
 
-Na trilha de desenvolvimento com Unity, a organização é:
+```yaml
+title: 'Introdução à Unity'
+pai: '01-preparacao-do-ambiente'
+nivel: 1
+ordem: 0
+```
 
-| Etapa | Ramificação | `ordem_ramo` |
-| --- | --- | --- |
-| `0` | Comece aqui | `0` |
-| `1` | Unity | `0` |
-| `1` | Git/GitHub | `1` |
-| `1` | C\# e boas práticas | `2` |
-| `2` | Prática e rotina no laboratório | `0` |
+Para colocar áudio como filho da introdução à Unity:
 
-As ramificações da mesma etapa aparecem lado a lado quando houver espaço na tela. Em telas menores, ficam uma abaixo da outra. O campo `nivel` organiza os materiais dentro de cada ramificação, e `ordem` organiza materiais do mesmo nível.
+```yaml
+title: 'Áudio: organização e reprodução'
+pai: '04-primeira-execucao-na-unity'
+nivel: 2
+ordem: 1
+```
 
-Use os mesmos valores de `etapa` e `ordem_ramo` em todos os materiais de uma ramificação. Descreva no conteúdo os pré-requisitos que vêm de outro assunto e inclua links para eles. Os conectores do mapa indicam uma sequência de estudo sugerida.
+Os exemplos mostram os campos de hierarquia. Cada `index.md` também precisa de `description` e `destino`, apresentados no modelo acima.
 
-Os campos novos são opcionais. Trilhas sem `ramo` continuam usando a árvore por níveis descrita acima. Se apenas parte dos materiais tiver `ramo`, os demais aparecerão em uma ramificação chamada Geral.
+O resultado é uma árvore com relações explícitas:
 
-Para nomes com `C\#`, use aspas simples no YAML, como `ramo: 'C\# e boas práticas'`. Assim, a barra é preservada no arquivo e o card exibe o nome corretamente.
+```text
+Introdução geral
+├── Introdução à Unity
+│   ├── Interface
+│   └── Áudio
+├── Introdução ao Git/GitHub
+└── Introdução ao C#
+```
 
-### Passo 3 — Criar o conteúdo
+- A árvore possui uma única raiz, com `pai: null` e `nivel: 0`.
+- Cada filho informa o nome da pasta do pai e usa um nível a mais que ele.
+- `ordem` organiza os filhos de um mesmo pai. Em caso de empate, vale a ordem alfabética das pastas.
+- O pai precisa existir na mesma pasta `materiais`. Um conteúdo não pode ser pai de si mesmo nem formar um ciclo com outros materiais.
+- Use títulos sem numeração. A posição na árvore é definida pelos metadados.
+
+As linhas da árvore indicam parentesco por assunto. Explique no texto os pré-requisitos de estudo ou de prática, incluindo links para outros ramos quando necessário. Em telas menores, a árvore fica vertical e mantém a indentação dos filhos.
+
+Preencha `pai` em todos os materiais da trilha ao adotar esse modelo. Trilhas sem esse campo continuam usando a apresentação antiga, por níveis. Os campos `ramo`, `etapa` e `ordem_ramo` não são usados na árvore de pais e filhos.
+
+Para títulos com `C#`, use aspas simples no YAML, como `title: 'Introdução ao C#'`.
+
+### Criar o conteúdo
 
 Na mesma pasta, crie `conteudo.md`.
 
@@ -239,7 +241,7 @@ Você pode adaptar as seções conforme a necessidade do tutorial.
 
 ---
 
-## 4. Como adicionar imagens, vídeos e links
+## Como adicionar imagens, vídeos e links
 
 O Markdown permite incluir diferentes tipos de conteúdo.
 
@@ -275,7 +277,7 @@ Nesse caso, o card abrirá o endereço externo e não será necessário criar um
 
 ---
 
-## 5. Como publicar
+## Como publicar
 
 Depois de criar os arquivos:
 
@@ -293,7 +295,7 @@ Seu novo conteúdo deverá aparecer automaticamente!
 
 ---
 
-## 6. Antes de finalizar
+## Antes de finalizar
 
 Confira:
 

@@ -1,14 +1,12 @@
 # Rotina de trabalho e solução de problemas
 
-> Ramificação: **Prática e rotina no laboratório**.
-
 ## Objetivo
 
 Consolide a integração e aprenda a comunicar impedimentos à equipe.
 
 ## Pré-requisitos
 
-Concluir [Preparação do ambiente e acessos](../01-preparacao-do-ambiente/conteudo.md). Use o diagnóstico sempre que precisar de ajuda. Para encerrar a primeira entrega, conclua [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md) e [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md); o PR pode estar aguardando revisão.
+Concluir [Introdução geral](../01-preparacao-do-ambiente/conteudo.md). Use o diagnóstico sempre que precisar de ajuda. Para encerrar a primeira entrega, conclua [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md) e [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md); o PR pode estar aguardando revisão.
 
 ## Diagnóstico inicial
 
@@ -77,8 +75,11 @@ Se seu PR ainda estiver em revisão, mantenha esse item do checklist pendente at
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md)
+**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
 
-A integração estará concluída quando os critérios aplicáveis estiverem atendidos. Combine as próximas tarefas com a equipe.
+**Conteúdos relacionados:**
+
+- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
+- [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md).

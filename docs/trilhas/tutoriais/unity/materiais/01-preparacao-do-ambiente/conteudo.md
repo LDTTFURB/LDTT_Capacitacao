@@ -1,6 +1,4 @@
-# Preparação do ambiente e acessos
-
-> Ramificação: **Comece aqui**.
+# Introdução geral
 
 ## Objetivo
 
@@ -9,6 +7,11 @@ Prepare suas contas, ferramentas e a versão da Unity utilizada no projeto.
 ## Pré-requisitos
 
 Ter um computador disponível e saber quem pode orientar seus primeiros passos no laboratório. Neste tutorial, integração significa esse período de preparação e familiarização com a equipe e o projeto.
+
+## Como usar esta trilha
+
+Comece pelos acessos e ferramentas apresentados aqui. Depois, escolha uma das introduções: Unity para conhecer o Editor e executar o projeto, Git/GitHub para obter e compartilhar o código, ou C\# para estudar programação. Os materiais filhos aprofundam o assunto do seu conteúdo pai. Consulte os pré-requisitos de cada página, pois uma atividade também pode depender de outro ramo.
+
 
 ## Conheça o laboratório
 
@@ -68,7 +71,7 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 3. Configure seu nome e e-mail para identificar a autoria dos commits, que são registros de alterações no histórico do Git.
 4. Se preferir usar Git pelo terminal, verifique também se o Git está instalado.
 
-> A abertura de scripts para validar a IDE será feita em [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md), após clonar e abrir o projeto.
+> A abertura de scripts para validar a IDE será feita em [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md), após clonar e abrir o projeto.
 
 ## Resultado e critérios de conclusão
 
@@ -78,10 +81,11 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-Depois da preparação, você pode começar por:
+**Aprofunde este assunto:**
 
-- [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md), para obter o projeto.
-- [Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md), para estudar programação.
-- [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md), depois de clonar o repositório.
+- [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
+- [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md).
+- [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md).
+- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).

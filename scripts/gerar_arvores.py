@@ -101,6 +101,10 @@ def gerar_card(arquivo, dados):
     if not isinstance(destino, str) or not destino.strip():
         raise ValueError("destino invalido")
 
+    # Os cards usam HTML, portanto o escape Markdown nao aparece no texto.
+    titulo = titulo.replace(r"\#", "#")
+    descricao = descricao.replace(r"\#", "#")
+
     link, externo = gerar_link(arquivo, destino.strip())
 
     atributos = ""
@@ -243,6 +247,114 @@ def montar_arvore(grupos):
 
 
 
+CSS_HIERARQUIA = """
+<style>
+.arvore-hierarquia { --linha: var(--md-default-fg-color--lightest); margin: 24px 0; }
+.md-typeset .arvore-hierarquia ul { list-style: none; padding: 0; margin: 0; }
+.md-typeset .arvore-hierarquia li { list-style: none; margin: 0; position: relative; min-width: 0; }
+.arvore-hierarquia .arvore-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 14px;
+  border: 1px solid var(--linha); border-radius: 10px; color: inherit;
+  text-decoration: none; overflow-wrap: break-word;
+}
+.arvore-hierarquia .arvore-card:hover,
+.arvore-hierarquia .arvore-card:focus-visible { border-color: var(--md-primary-fg-color); }
+.arvore-hierarquia .arvore-card strong { font-size: 14px; }
+.arvore-hierarquia .arvore-card span { font-size: 12px; opacity: .75; }
+.arvore-hierarquia .arvore-raiz > .arvore-card { max-width: 360px; margin: 0 auto; }
+.arvore-hierarquia .arvore-raiz > .arvore-filhos {
+  display: flex; align-items: flex-start; gap: 20px; padding-top: 40px;
+}
+.arvore-hierarquia .arvore-raiz > .arvore-card { position: relative; }
+.arvore-hierarquia .arvore-raiz > .arvore-card::after {
+  content: ''; position: absolute; left: 50%; top: 100%; height: 20px;
+  border-left: 2px solid var(--linha);
+}
+.arvore-hierarquia .arvore-raiz > .arvore-filhos { position: relative; }
+.arvore-hierarquia .arvore-raiz > .arvore-filhos > li { flex: 1 1 0; }
+.arvore-hierarquia .arvore-raiz > .arvore-filhos > li::before {
+  content: ''; position: absolute; top: -20px; left: -10px; right: -10px;
+  height: 20px; border-top: 2px solid var(--linha);
+}
+.arvore-hierarquia .arvore-raiz > .arvore-filhos > li:first-child::before { left: 50%; }
+.arvore-hierarquia .arvore-raiz > .arvore-filhos > li:last-child::before { right: 50%; }
+.arvore-hierarquia .arvore-raiz > .arvore-filhos > li::after {
+  content: ''; position: absolute; left: 50%; top: -20px; height: 20px;
+  border-left: 2px solid var(--linha);
+}
+.arvore-hierarquia .arvore-filhos .arvore-filhos {
+  margin: 0 0 0 12px; padding: 0 0 0 16px; border-left: 2px solid var(--linha);
+}
+.arvore-hierarquia .arvore-filhos .arvore-filhos > li { padding-top: 16px; }
+.arvore-hierarquia .arvore-filhos .arvore-filhos > li::before {
+  content: ''; position: absolute; left: -16px; top: 38px; width: 16px;
+  border-top: 2px solid var(--linha);
+}
+@media (max-width: 900px) {
+  .arvore-hierarquia .arvore-raiz > .arvore-card { margin: 0; max-width: none; }
+  .arvore-hierarquia .arvore-raiz > .arvore-card::after { display: none; }
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos {
+    display: block; margin-left: 12px; padding: 0 0 0 16px; border-left: 2px solid var(--linha);
+  }
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li { padding-top: 16px; }
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li::before,
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li:first-child::before,
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li:last-child::before {
+    left: -16px; right: auto; top: 38px; width: 16px; height: 0;
+  }
+  .arvore-hierarquia .arvore-raiz > .arvore-filhos > li::after { display: none; }
+}
+</style>
+"""
+
+
+def montar_hierarquia(nos):
+    """Valida pais e niveis antes de gerar uma lista aninhada de materiais."""
+    filhos = defaultdict(list)
+    for identificador, no in nos.items():
+        if "pai" not in no:
+            raise ValueError(f"Informe pai (ou null na raiz): {identificador}")
+        pai = no["pai"]
+        if pai is not None and (not isinstance(pai, str) or pai not in nos):
+            raise ValueError(f"Pai inexistente ou invalido: {identificador}")
+        filhos[pai].append(identificador)
+
+    # Percorre os pais de todos os nos, inclusive componentes sem uma raiz.
+    profundidades = {}
+    visitando = set()
+
+    def profundidade(identificador):
+        if identificador in visitando:
+            raise ValueError(f"Ciclo na arvore: {identificador}")
+        if identificador not in profundidades:
+            visitando.add(identificador)
+            pai = nos[identificador]["pai"]
+            profundidades[identificador] = 0 if pai is None else profundidade(pai) + 1
+            visitando.remove(identificador)
+        return profundidades[identificador]
+
+    for identificador, no in nos.items():
+        if no["nivel"] != profundidade(identificador):
+            raise ValueError(f"Nivel incompativel com o pai: {identificador}")
+    if len(filhos[None]) != 1:
+        raise ValueError("A arvore deve ter uma unica raiz de nivel 0")
+
+    def renderizar(pai):
+        partes = ['<ul class="arvore-filhos">' if pai is not None else '<ul class="arvore-topo">']
+        for identificador in sorted(filhos[pai], key=lambda item: (nos[item]["ordem"], item)):
+            no = nos[identificador]
+            classe = ' class="arvore-raiz"' if pai is None else ''
+            partes.append(f'<li{classe} data-id="{escape(identificador, quote=True)}" data-nivel="{no["nivel"]}">')
+            partes.append(no["card"])
+            if filhos[identificador]:
+                partes.append(renderizar(identificador))
+            partes.append('</li>')
+        partes.append('</ul>')
+        return '\n'.join(partes)
+
+    return '<nav class="arvore-hierarquia" aria-label="Árvore dos materiais">\n' + renderizar(None) + '\n</nav>\n' + CSS_HIERARQUIA
+
+
 def processar_trilha(trilha):
     arquivo_index = trilha / "index.md"
     arquivo_conteudo = trilha / "conteudo.md"
@@ -264,6 +376,8 @@ def processar_trilha(trilha):
         return
 
     grupos = defaultdict(list)
+    nos = {}
+    hierarquica = False
 
     if pasta_materiais.exists():
         arquivos = sorted(
@@ -276,6 +390,11 @@ def processar_trilha(trilha):
             try:
                 dados = ler_metadados(arquivo)
                 nivel, ordem, card = gerar_card(arquivo, dados)
+                no = dict(nivel=nivel, ordem=ordem, card=card)
+                if "pai" in dados:
+                    hierarquica = True
+                    no["pai"] = dados["pai"]
+                nos[arquivo.parent.name] = no
 
                 grupos[nivel].append(
                     (ordem, arquivo.parent.name.lower(), card)
@@ -285,7 +404,7 @@ def processar_trilha(trilha):
                 print(f"AVISO: {arquivo}: {erro}")
 
 
-    arvore = montar_arvore(grupos)
+    arvore = montar_hierarquia(nos) if hierarquica else montar_arvore(grupos)
 
     # Substitui somente o marcador.
     texto_final = texto_original.replace(MARCADOR, arvore, 1)
@@ -304,7 +423,7 @@ def processar_trilha(trilha):
     )
 
 
-if ROOT.exists():
+if __name__ == "__main__" and ROOT.exists():
     for trilha in sorted(
         ROOT.iterdir(),
         key=lambda p: p.name.lower()

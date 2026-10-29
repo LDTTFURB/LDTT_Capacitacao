@@ -1,16 +1,14 @@
 # Interface: resolução, painéis e desempenho
 
-> Ramificação: **Unity**.
-
 ## Objetivo
 
 Verifique se a interface funciona nas telas previstas, acompanhe a abertura de painéis e entenda os conceitos básicos de desempenho visual.
 
 ## Pré-requisitos
 
-Concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar interface sem concluir padrões de projeto ou áudio.
+Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar interface sem concluir padrões de projeto ou áudio.
 
-## 1. Configuração da interface
+## Configuração da interface
 
 A interface precisa continuar legível e utilizável nas telas previstas para o jogo. **Resolução** é a quantidade de pixels da imagem, como 1920 × 1080. **Proporção** é a relação entre largura e altura, como 16:9. Ao mudar de tela, um botão pode ficar cortado ou cobrir outro elemento; por isso, teste as opções indicadas pela equipe.
 
@@ -22,7 +20,7 @@ A interface precisa continuar legível e utilizável nas telas previstas para o 
 
 **Estudo indicado:** [Configuração de interface — EN](https://youtu.be/VHFJgQraVUs) e [PT-BR](https://youtu.be/5rosjAX2Cag).
 
-## 2. Draw calls e batches
+## Draw calls e batches
 
 Uma **draw call** é uma solicitação de desenho enviada à placa gráfica. Um **batch** reúne elementos que podem ser processados juntos. **Renderização** é o processo de gerar a imagem exibida na tela. Estude como as escolhas da interface afetam esse trabalho. Compartilhar recursos pode favorecer o agrupamento, mas o resultado depende do projeto e precisa ser medido.
 
@@ -30,7 +28,7 @@ Antes de propor uma otimização, combine com a equipe o cenário e a ferramenta
 
 **Estudo indicado:** [Draw calls — EN](https://youtu.be/_EmwV98r4RY) e [PT-BR](https://youtu.be/tfqwa-eImcw). Ao estudar, anote quais escolhas de organização da interface podem afetar o desenho dos elementos.
 
-## 3. Gerenciamento de painéis
+## Gerenciamento de painéis
 
 Um painel agrupa elementos de uma tela, como os controles do menu de pausa. Um pop-up é uma janela que aparece sobre a tela atual, como uma confirmação de saída. Um gerenciador de painéis organiza quando cada um deve abrir e fechar. Antes de criar outro gerenciador, procure a solução já adotada pelo projeto.
 
@@ -41,7 +39,7 @@ Um painel agrupa elementos de uma tela, como os controles do menu de pausa. Um p
 
 **Estudo indicado:** [Panel Manager — EN](https://youtu.be/texonivDsy0).
 
-## 4. Exercício
+## Exercício
 
 Escolha uma tela existente, teste duas proporções de tela previstas pelo projeto e percorra um fluxo de abrir, fechar e retornar. Registre a cena, as proporções testadas e o que aconteceu. Por exemplo: “Na proporção prevista para o celular, todos os botões ficaram visíveis; ao fechar a confirmação, voltei ao menu de pausa”. Se a tarefa envolver desempenho, registre também uma comparação combinada com a equipe. Não é preciso implementar uma nova interface para concluir esta etapa.
 
@@ -53,8 +51,10 @@ Escolha uma tela existente, teste duas proporções de tela previstas pelo proje
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md)
+**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
 
-[Próximo nesta ramificação: Áudio: organização e reprodução →](../09-audio/conteudo.md)
+**Conteúdos relacionados:**
+
+- [Áudio: organização e reprodução](../09-audio/conteudo.md).

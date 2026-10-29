@@ -1,7 +1,5 @@
 # Pull Request, revisão e próxima tarefa
 
-> Ramificação: **Git/GitHub**.
-
 ## Objetivo
 
 Solicite a revisão da entrega e acompanhe sua integração em develop.
@@ -77,8 +75,10 @@ A integração de `develop` em `main` segue o fluxo de estabilização e revisã
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: Registre commits e envie sua branch](../11-commits-e-push/conteudo.md)
+**Conteúdo pai:** [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
 
-Para acompanhar a primeira entrega, consulte [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).
+**Conteúdos relacionados:**
+
+- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).

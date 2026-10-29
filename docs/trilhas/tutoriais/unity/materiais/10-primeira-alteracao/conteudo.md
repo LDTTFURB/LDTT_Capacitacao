@@ -1,14 +1,12 @@
 # Implemente e teste sua primeira alteração
 
-> Ramificação: **Prática e rotina no laboratório**.
-
 ## Objetivo
 
 Conclua uma tarefa pequena e reúna evidências de que ela funciona.
 
 ## Pré-requisitos
 
-Concluir [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md), [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md) e [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Trabalhe na sua branch e combine uma tarefa pequena com a equipe. Estude interface, áudio ou padrões de projeto conforme a necessidade dessa tarefa.
+Concluir [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md), [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Trabalhe na sua branch e combine uma tarefa pequena com a equipe. Estude interface, áudio ou padrões de projeto conforme a necessidade dessa tarefa.
 
 ## Execute a tarefa
 
@@ -34,8 +32,11 @@ Anote a cena utilizada, os passos executados e o resultado observado. Por exempl
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[Próximo nesta ramificação: Rotina de trabalho e solução de problemas →](../13-rotina-e-solucao-de-problemas/conteudo.md)
+**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
 
-Para enviar esta entrega, siga para [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md) e depois [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md), na ramificação Git/GitHub.
+**Conteúdos relacionados:**
+
+- [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
+- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).

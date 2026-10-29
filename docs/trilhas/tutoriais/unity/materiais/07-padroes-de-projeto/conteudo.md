@@ -1,7 +1,5 @@
 # Padrões de projeto na Unity
 
-> Ramificação: **C\# e boas práticas**.
-
 ## Objetivo
 
 Reconheça Singleton, Observer, Command, State e Flyweight e avalie quando usá-los.
@@ -10,13 +8,13 @@ Reconheça Singleton, Observer, Command, State e Flyweight e avalie quando usá-
 
 Concluir [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md). Nesta etapa, você analisará soluções existentes; implementar um padrão não é um requisito para avançar.
 
-## 1. Entenda a finalidade antes de aplicar
+## Entenda a finalidade antes de aplicar
 
 Um padrão de projeto descreve uma forma conhecida de resolver um problema recorrente de organização do código. Sua escolha depende da necessidade e da arquitetura do projeto, ou seja, de como seus sistemas estão organizados e se relacionam. Na Unity, a solução também pode aproveitar recursos do motor de jogo e diferir de um exemplo escrito apenas em C\#.
 
 Se estiver trabalhando no Furbot, siga a orientação do laboratório de priorizar os vídeos em inglês. Use os materiais em português como apoio quando precisar esclarecer um conceito.
 
-## 2. Conheça os cinco padrões
+## Conheça os cinco padrões
 
 | Padrão | Ideia principal | Situação para discutir com a equipe |
 | --- | --- | --- |
@@ -28,7 +26,7 @@ Se estiver trabalhando no Furbot, siga a orientação do laboratório de prioriz
 
 Os cenários ajudam a reconhecer problemas que os padrões podem resolver; você não precisa implementar todos eles. No Flyweight, vários objetos compartilham dados comuns: por exemplo, árvores podem usar os mesmos dados de aparência e manter posições próprias. Já o **object pooling** reutiliza objetos criados anteriormente, como projéteis que voltam a ser usados. Essa diferença ajuda a escolher a solução adequada.
 
-## 3. Materiais de estudo
+## Materiais de estudo
 
 Nas indicações, **EN** significa inglês e **PT-BR**, português brasileiro. As observações sobre legendas seguem o guia de referência do laboratório.
 
@@ -40,7 +38,7 @@ Nas indicações, **EN** significa inglês e **PT-BR**, português brasileiro. A
 | State | [EN, trecho indicado](https://youtu.be/hQE8lQk9ikE?t=1276) | [PT-BR](https://youtu.be/i-VkhmDfrok) |
 | Flyweight | [EN, trecho indicado](https://youtu.be/hQE8lQk9ikE?t=1061) | [Com legenda, conforme o guia](https://youtu.be/By579DX9aYc) |
 
-## 4. Exercício de análise
+## Exercício de análise
 
 1. Escolha um dos padrões e estude seu material indicado.
 2. Descreva o problema que ele resolve e um possível uso no projeto.
@@ -57,8 +55,10 @@ Para concluir a etapa, basta demonstrar essa análise. A implementação de um p
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)
+**Conteúdo pai:** [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md).
 
-Aplique o que precisar na sua tarefa: [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md). Consulte os pré-requisitos dessa prática antes de começar.
+**Conteúdos relacionados:**
+
+- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).

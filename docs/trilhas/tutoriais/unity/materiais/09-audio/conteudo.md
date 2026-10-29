@@ -1,16 +1,14 @@
 # Áudio: organização e reprodução
 
-> Ramificação: **Unity**.
-
 ## Objetivo
 
 Conheça o gerenciamento de sons, os materiais de áudio e a nomenclatura utilizada.
 
 ## Pré-requisitos
 
-Concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar áudio sem concluir o material de interface.
+Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar áudio sem concluir o material de interface.
 
-## 1. Gerenciamento de áudio
+## Gerenciamento de áudio
 
 Um **Sound Manager** é um gerenciador que organiza pedidos de reprodução de sons. Por exemplo, o código de uma coleta pode solicitar um efeito sonoro a esse gerenciador. Verifique como o projeto já faz isso e como os sistemas se relacionam antes de propor uma nova solução.
 
@@ -21,13 +19,13 @@ Um **Sound Manager** é um gerenciador que organiza pedidos de reprodução de s
 
 **Estudo indicado:** [Sound Manager — EN](https://youtu.be/QL29aTa7J5Q).
 
-## 2. Funcionalidades de áudio da Unity
+## Funcionalidades de áudio da Unity
 
 Para acompanhar a reprodução, reconheça dois elementos: o **AudioClip** é o recurso que contém o som, e o **AudioSource** é o componente que o reproduz na cena. O material abaixo serve de apoio para estudar os recursos empregados pelo projeto e discutir ajustes com a equipe.
 
 **Estudo indicado:** [Funcionalidades de áudio — EN](https://youtu.be/B9yxkJuHLek). Ao estudar, anote quais recursos também aparecem no projeto e quais dúvidas você precisa discutir com a equipe.
 
-## 3. Relacione com a nomenclatura
+## Relacione com a nomenclatura
 
 | Categoria | Convenção | Exemplo |
 | --- | --- | --- |
@@ -36,7 +34,7 @@ Para acompanhar a reprodução, reconheça dois elementos: o **AudioClip** é o 
 
 Evite renomear assets já referenciados apenas para cumprir um exercício. Registre divergências e combine a mudança com o responsável.
 
-## 4. Exercício
+## Exercício
 
 Execute um fluxo que contenha música e efeito sonoro. Identifique o arquivo e a ação que inicia cada som. Por exemplo: a música começa ao abrir o menu e o efeito toca ao coletar uma moeda. Depois, procure o componente ou o trecho de código responsável pela reprodução. Registre se o comportamento observado corresponde ao esperado. Se o projeto não tiver áudio, faça a análise com um exemplo do material indicado em ambiente de treinamento.
 
@@ -48,8 +46,10 @@ Execute um fluxo que contenha música e efeito sonoro. Identifique o arquivo e a
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[← Anterior nesta ramificação: Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md)
+**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
 
-Aplique o que precisar na sua tarefa: [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md). Consulte os pré-requisitos dessa prática antes de começar.
+**Conteúdos relacionados:**
+
+- [Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md).

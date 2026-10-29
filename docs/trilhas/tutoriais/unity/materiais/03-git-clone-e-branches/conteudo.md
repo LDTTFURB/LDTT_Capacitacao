@@ -1,6 +1,4 @@
-# Git: clone e branch de trabalho
-
-> Ramificação: **Git/GitHub**.
+# Introdução ao Git/GitHub
 
 ## Objetivo
 
@@ -8,7 +6,12 @@ Obtenha o projeto e crie uma branch conforme o padrão do LDTT.
 
 ## Pré-requisitos
 
-Concluir [Preparação do ambiente e acessos](../01-preparacao-do-ambiente/conteudo.md) e confirmar o acesso ao repositório no GitHub. Não é necessário concluir os estudos de programação para clonar o projeto.
+Concluir [Introdução geral](../01-preparacao-do-ambiente/conteudo.md) e confirmar o acesso ao repositório no GitHub. Não é necessário concluir os estudos de programação para clonar o projeto.
+
+## Git e GitHub: qual é a função de cada um?
+
+Git registra o histórico de alterações dos arquivos. GitHub hospeda o repositório e permite compartilhar e revisar o trabalho da equipe. GitHub Desktop oferece uma interface visual para essas operações. Comece pelo clone e pela criação da sua branch; depois, avance para commits, push e Pull Request nos conteúdos filhos.
+
 
 ## Clone o repositório
 
@@ -72,8 +75,14 @@ Escolha um nome curto e relacionado ao trabalho. Uma nova tarefa deve, preferenc
 
 ## Navegação
 
-[← Voltar ao mapa da trilha](../../conteudo.md)
+[← Voltar à árvore de conteúdos](../../conteudo.md)
 
-[Próximo nesta ramificação: Registre commits e envie sua branch →](../11-commits-e-push/conteudo.md)
+**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
 
-Para iniciar o trabalho na Unity, siga para [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md). Estude commits e PRs agora ou retome esses materiais quando tiver uma alteração para enviar.
+**Aprofunde este assunto:**
+
+- [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
+
+**Conteúdos relacionados:**
+
+- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).

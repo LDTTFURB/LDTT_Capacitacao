@@ -1,10 +1,8 @@
 ---
-title: '1. Fundamentos de C\# e plano de estudos'
+title: 'Introdução ao C\#'
 description: 'Aprenda os fundamentos de C\# e organize seu estudo com exercícios e cursos de apoio.'
-ramo: 'C\# e boas práticas'
-etapa: 1
-ordem_ramo: 2
-nivel: 0
-ordem: 0
+pai: '01-preparacao-do-ambiente'
+nivel: 1
+ordem: 2
 destino: 'conteudo.md'
 ---

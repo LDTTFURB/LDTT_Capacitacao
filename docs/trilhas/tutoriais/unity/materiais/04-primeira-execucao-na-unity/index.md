@@ -1,10 +1,8 @@
 ---
-title: '1. Primeira execução e exploração do projeto'
+title: 'Introdução à Unity'
 description: 'Abra o projeto, execute a cena inicial e reconheça seus principais elementos.'
-ramo: 'Unity'
-etapa: 1
-ordem_ramo: 0
-nivel: 0
+pai: '01-preparacao-do-ambiente'
+nivel: 1
 ordem: 0
 destino: 'conteudo.md'
 ---

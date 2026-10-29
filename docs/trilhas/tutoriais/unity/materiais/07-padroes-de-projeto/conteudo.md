@@ -6,11 +6,11 @@ Reconheça Singleton, Observer, Command, State e Flyweight e avalie quando usá-
 
 ## Pré-requisitos
 
-Concluir o tutorial 06: C#: contratos, eventos e refatoração.
+Concluir o tutorial 06: C\#: contratos, eventos e refatoração.
 
 ## 1. Entenda a finalidade antes de aplicar
 
-Um padrão de projeto descreve uma forma conhecida de resolver um problema recorrente de organização do código. Sua escolha depende da necessidade e da arquitetura do projeto, ou seja, de como seus sistemas estão organizados e se relacionam. Na Unity, a solução também pode aproveitar recursos do motor de jogo e diferir de um exemplo escrito apenas em C#.
+Um padrão de projeto descreve uma forma conhecida de resolver um problema recorrente de organização do código. Sua escolha depende da necessidade e da arquitetura do projeto, ou seja, de como seus sistemas estão organizados e se relacionam. Na Unity, a solução também pode aproveitar recursos do motor de jogo e diferir de um exemplo escrito apenas em C\#.
 
 Se estiver trabalhando no Furbot, siga a orientação do laboratório de priorizar os vídeos em inglês. Use os materiais em português como apoio quando precisar esclarecer um conceito.
 
@@ -55,6 +55,6 @@ Para concluir a etapa, basta demonstrar essa análise. A implementação de um p
 
 ## Navegação
 
-[← Anterior: C#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)
+[← Anterior: C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)
 
 [Próximo: Interface: resolução, painéis e desempenho →](../08-interface-e-desempenho/conteudo.md)

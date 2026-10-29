@@ -1,4 +1,4 @@
-# 02. Fundamentos de C#, Unity e materiais de estudo
+# 02. Fundamentos de C\#, Unity e materiais de estudo
 
 ## Objetivo
 
@@ -12,7 +12,7 @@ Concluir o tutorial 01: Preparação do ambiente e acessos.
 
 Alterne estudo e prática: aprenda um conceito, aplique-o em um projeto de treinamento e depois procure exemplos no projeto do laboratório.
 
-### Etapa 1: fundamentos de C#
+### Etapa 1: fundamentos de C\#
 
 Comece por variáveis e tipos: uma variável guarda um valor, e seu tipo define que espécie de valor ela pode guardar, como um número inteiro ou um texto. Depois, estude condicionais para tomar decisões, repetições para executar ações várias vezes e métodos para organizar ações com um nome.
 
@@ -52,13 +52,13 @@ Combine com a equipe quais conteúdos priorizar de acordo com sua experiência e
 
 ## Prática para avançar
 
-Em um projeto de treinamento separado do repositório do laboratório, realize os exercícios de C# e Unity indicados acima. Explique a um colega a diferença entre cena, objeto, componente e script, e entre commit e push. A prática com PR será concluída nos tutoriais 10 a 12.
+Em um projeto de treinamento separado do repositório do laboratório, realize os exercícios de C\# e Unity indicados acima. Explique a um colega a diferença entre cena, objeto, componente e script, e entre commit e push. A prática com PR será concluída nos tutoriais 10 a 12.
 
 Não é necessário concluir os dois cursos inteiros para avançar. Use os conteúdos que atendam às suas dificuldades e mantenha o estudo durante as próximas etapas.
 
 ## Resultado e critérios de conclusão
 
-- [ ] Revisei os fundamentos de C# necessários para ler um script simples.
+- [ ] Revisei os fundamentos de C\# necessários para ler um script simples.
 - [ ] Pratiquei criar um objeto e associar um script em um projeto de treinamento.
 - [ ] Sei explicar os conceitos básicos e identifiquei o que preciso continuar estudando.
 

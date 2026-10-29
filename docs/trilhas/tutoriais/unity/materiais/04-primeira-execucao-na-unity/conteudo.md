@@ -37,7 +37,7 @@ A primeira abertura pode demorar mais. Antes de modificar qualquer código, veri
 - **Cena:** reúne objetos e configurações de uma parte do jogo, como um menu ou uma fase.
 - **GameObject:** objeto da cena que recebe componentes.
 - **Componente:** define dados ou comportamentos associados a um GameObject.
-- **Script:** arquivo de código; muitos comportamentos de objetos são implementados em componentes C#.
+- **Script:** arquivo de código; muitos comportamentos de objetos são implementados em componentes C\#.
 - **Prefab:** asset reutilizável que armazena uma configuração de objetos e componentes.
 - **Asset:** recurso do projeto, como uma imagem, um áudio, um material, uma cena ou um script.
 

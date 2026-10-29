@@ -6,7 +6,7 @@ Obtenha o projeto e crie uma branch conforme o padrão do LDTT.
 
 ## Pré-requisitos
 
-Concluir o tutorial 02: Fundamentos de C#, Unity e materiais de estudo.
+Concluir o tutorial 02: Fundamentos de C\#, Unity e materiais de estudo.
 
 ## Clone o repositório
 
@@ -64,6 +64,6 @@ Escolha um nome curto e relacionado ao trabalho. Uma nova tarefa deve, preferenc
 
 ## Navegação
 
-[← Anterior: Fundamentos de C#, Unity e materiais de estudo](../02-fundamentos-e-estudos/conteudo.md)
+[← Anterior: Fundamentos de C\#, Unity e materiais de estudo](../02-fundamentos-e-estudos/conteudo.md)
 
 [Próximo: Primeira execução e exploração do projeto →](../04-primeira-execucao-na-unity/conteudo.md)

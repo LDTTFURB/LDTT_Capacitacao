@@ -1,4 +1,4 @@
-# 06. C#: contratos, eventos e refatoração
+# 06. C\#: contratos, eventos e refatoração
 
 ## Objetivo
 
@@ -20,7 +20,7 @@ Um **delegate** é um tipo que permite guardar uma referência a um método comp
 
 Um **evento** permite que um objeto avise outros quando algo acontece. Por exemplo, ao receber um golpe, um personagem pode emitir `OnHit`; um método chamado `Character_OnHit` pode responder atualizando a tela. Quem emite o aviso é o publicador; quem se inscreve para recebê-lo é o assinante.
 
-No código de eventos C#, procure o uso de `+=`, que inscreve um método, e de `-=`, que remove essa inscrição. Aqui, inscrição em um evento é diferente de assinatura de método. Verifique quando o objeto começa e deixa de receber avisos. Antes de mudar esses momentos, discuta com a equipe quando os objetos são criados, ativados, desativados e destruídos.
+No código de eventos C\#, procure o uso de `+=`, que inscreve um método, e de `-=`, que remove essa inscrição. Aqui, inscrição em um evento é diferente de assinatura de método. Verifique quando o objeto começa e deixa de receber avisos. Antes de mudar esses momentos, discuta com a equipe quando os objetos são criados, ativados, desativados e destruídos.
 
 **Estudo indicado:** [Delegates — EN](https://youtu.be/3ZfwqWl-YI0) e [Events — EN](https://youtu.be/OuZrhykVytg).
 

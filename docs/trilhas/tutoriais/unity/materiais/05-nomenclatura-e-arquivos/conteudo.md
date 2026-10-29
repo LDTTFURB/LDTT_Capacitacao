@@ -74,4 +74,4 @@ As orientações abaixo complementam o guia para o trabalho em equipe:
 
 [← Anterior: Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md)
 
-[Próximo: C#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)
+[Próximo: C\#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)

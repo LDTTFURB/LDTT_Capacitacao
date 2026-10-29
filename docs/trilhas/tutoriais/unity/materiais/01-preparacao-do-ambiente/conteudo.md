@@ -28,11 +28,11 @@ Se estiver usando uma máquina da FURB, verifique o que já está instalado. Qua
 | --- | --- |
 | Unity Editor | Editar cenas, configurar objetos, programar comportamentos e executar o jogo. |
 | Unity Hub | Gerenciar projetos e instalações do Unity Editor. |
-| C# | Linguagem utilizada para programar os comportamentos dos projetos. |
+| C\# | Linguagem utilizada para programar os comportamentos dos projetos. |
 | Git | Registrar alterações e manter o histórico de desenvolvimento. |
 | GitHub | Hospedar os repositórios e organizar a colaboração e a revisão de alterações. |
 | GitHub Desktop | Trabalhar visualmente com operações de Git e GitHub. |
-| IDE (ambiente de desenvolvimento) | Escrever código C# e investigar erros com ferramentas de navegação e depuração. Depurar é acompanhar a execução do código para entender seu comportamento. |
+| IDE (ambiente de desenvolvimento) | Escrever código C\# e investigar erros com ferramentas de navegação e depuração. Depurar é acompanhar a execução do código para entender seu comportamento. |
 
 ### Prepare suas contas e acessos
 
@@ -50,11 +50,11 @@ Se estiver usando uma máquina da FURB, verifique o que já está instalado. Qua
 
 ### Configure a IDE
 
-O guia recomenda o **Visual Studio**, mas permite alternativas compatíveis com C# e Unity, como **Visual Studio Code** e **JetBrains Rider**.
+O guia recomenda o **Visual Studio**, mas permite alternativas compatíveis com C\# e Unity, como **Visual Studio Code** e **JetBrains Rider**.
 
 1. Verifique se a IDE escolhida está instalada e possui suporte ao desenvolvimento com Unity.
 2. Nas preferências do Unity Editor, localize a configuração de ferramentas externas e selecione o editor de scripts. A localização e o nome dessa opção podem variar conforme a versão e o sistema operacional.
-3. Quando o projeto estiver aberto, dê dois cliques em um script C# na janela Project.
+3. Quando o projeto estiver aberto, dê dois cliques em um script C\# na janela Project.
 4. Confirme que o arquivo abre na IDE e que ela reconhece os tipos da Unity.
 
 Não suponha que a IDE foi instalada automaticamente com o Editor: confira a instalação antes de começar.
@@ -76,4 +76,4 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 
 ## Navegação
 
-[Próximo: Fundamentos de C#, Unity e materiais de estudo →](../02-fundamentos-e-estudos/conteudo.md)
+[Próximo: Fundamentos de C\#, Unity e materiais de estudo →](../02-fundamentos-e-estudos/conteudo.md)

@@ -1,4 +1,6 @@
-# 01. Preparação do ambiente e acessos
+# Preparação do ambiente e acessos
+
+> Ramificação: **Comece aqui**.
 
 ## Objetivo
 
@@ -66,7 +68,7 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 3. Configure seu nome e e-mail para identificar a autoria dos commits, que são registros de alterações no histórico do Git.
 4. Se preferir usar Git pelo terminal, verifique também se o Git está instalado.
 
-> A abertura de scripts para validar a IDE será feita no tutorial 04, após clonar e abrir o projeto.
+> A abertura de scripts para validar a IDE será feita em [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md), após clonar e abrir o projeto.
 
 ## Resultado e critérios de conclusão
 
@@ -76,4 +78,10 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 
 ## Navegação
 
-[Próximo: Fundamentos de C\#, Unity e materiais de estudo →](../02-fundamentos-e-estudos/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
+
+Depois da preparação, você pode começar por:
+
+- [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md), para obter o projeto.
+- [Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md), para estudar programação.
+- [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md), depois de clonar o repositório.

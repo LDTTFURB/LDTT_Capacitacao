@@ -1,4 +1,6 @@
-# 05. Nomenclatura e organização de arquivos
+# Nomenclatura e organização de arquivos
+
+> Ramificação: **C\# e boas práticas**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Use os padrões de nomes de código e recursos (assets) do LDTT e entenda como p
 
 ## Pré-requisitos
 
-Concluir o tutorial 04: Primeira execução e exploração do projeto.
+Revisar [Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md) e concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md). Para comparar os nomes, você precisa reconhecer variáveis, classes e os arquivos principais do projeto.
 
 ## 1. Regras gerais
 
@@ -30,7 +32,7 @@ O formato de `GameManager` é chamado de **PascalCase**; o de `arrayAmount`, de 
 | Variável que referencia um prefab | Sufixo `Prefab`, respeitando também a visibilidade | `fishPrefab`, `_itemPrefab` |
 | Método assinante de evento | Nome do publicador, `_` e nome do evento | `Furbot_OnHealthChanged`, `Character_OnHit` |
 
-Um evento é uma notificação enviada pelo código, e o método assinante é o método que responde a ela. Por exemplo, `OnHit` pode ser o evento e `Character_OnHit` o método que reage a ele. O tutorial 06 explica essa relação com mais detalhes.
+Um evento é uma notificação enviada pelo código, e o método assinante é o método que responde a ela. Por exemplo, `OnHit` pode ser o evento e `Character_OnHit` o método que reage a ele. O material [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md) explica essa relação com mais detalhes.
 
 ## 3. Animação, sprites e áudio
 
@@ -72,6 +74,8 @@ As orientações abaixo complementam o guia para o trabalho em equipe:
 
 ## Navegação
 
-[← Anterior: Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: C\#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)
+[← Anterior nesta ramificação: Fundamentos de C\# e plano de estudos](../02-fundamentos-e-estudos/conteudo.md)
+
+[Próximo nesta ramificação: C\#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)

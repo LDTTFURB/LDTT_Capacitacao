@@ -1,4 +1,6 @@
-# 07. Padrões de projeto na Unity
+# Padrões de projeto na Unity
+
+> Ramificação: **C\# e boas práticas**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Reconheça Singleton, Observer, Command, State e Flyweight e avalie quando usá-
 
 ## Pré-requisitos
 
-Concluir o tutorial 06: C\#: contratos, eventos e refatoração.
+Concluir [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md). Nesta etapa, você analisará soluções existentes; implementar um padrão não é um requisito para avançar.
 
 ## 1. Entenda a finalidade antes de aplicar
 
@@ -55,6 +57,8 @@ Para concluir a etapa, basta demonstrar essa análise. A implementação de um p
 
 ## Navegação
 
-[← Anterior: C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Interface: resolução, painéis e desempenho →](../08-interface-e-desempenho/conteudo.md)
+[← Anterior nesta ramificação: C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)
+
+Aplique o que precisar na sua tarefa: [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md). Consulte os pré-requisitos dessa prática antes de começar.

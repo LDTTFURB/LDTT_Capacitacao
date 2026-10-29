@@ -152,6 +152,9 @@ destino: "conteudo.md"
 | `nivel` | Define em qual linha da árvore o card aparece. |
 | `ordem` | Define a posição entre os cards do mesmo nível. |
 | `destino` | Define o arquivo ou link aberto ao clicar. |
+| `ramo` | Opcional. Nome da ramificação, como Unity ou Git/GitHub. |
+| `etapa` | Opcional. Ordena os blocos de ramificações; começa em `0`. |
+| `ordem_ramo` | Opcional. Ordena as ramificações dentro da mesma etapa; começa em `0`. |
 
 ### Como funcionam os níveis?
 
@@ -171,6 +174,38 @@ O campo `ordem` é opcional.
 - `ordem: 1`, `2`, `3`... — permitem reorganizar os cards.
 
 Quando os valores são iguais, os cards seguem a ordem alfabética dos nomes das pastas.
+
+### Como criar ramificações por assunto?
+
+Use ramificações quando uma trilha reunir assuntos que podem ser consultados separadamente. No `index.md` de cada material, acrescente os campos abaixo:
+
+```yaml
+ramo: 'Unity'
+etapa: 1
+ordem_ramo: 0
+nivel: 0
+ordem: 0
+```
+
+Nesse exemplo, o tutorial aparece no primeiro nível da ramificação Unity. Para colocar outro material abaixo dele, mantenha `ramo`, `etapa` e `ordem_ramo` e use `nivel: 1`.
+
+Na trilha de desenvolvimento com Unity, a organização é:
+
+| Etapa | Ramificação | `ordem_ramo` |
+| --- | --- | --- |
+| `0` | Comece aqui | `0` |
+| `1` | Unity | `0` |
+| `1` | Git/GitHub | `1` |
+| `1` | C\# e boas práticas | `2` |
+| `2` | Prática e rotina no laboratório | `0` |
+
+As ramificações da mesma etapa aparecem lado a lado quando houver espaço na tela. Em telas menores, ficam uma abaixo da outra. O campo `nivel` organiza os materiais dentro de cada ramificação, e `ordem` organiza materiais do mesmo nível.
+
+Use os mesmos valores de `etapa` e `ordem_ramo` em todos os materiais de uma ramificação. Descreva no conteúdo os pré-requisitos que vêm de outro assunto e inclua links para eles. Os conectores do mapa indicam uma sequência de estudo sugerida.
+
+Os campos novos são opcionais. Trilhas sem `ramo` continuam usando a árvore por níveis descrita acima. Se apenas parte dos materiais tiver `ramo`, os demais aparecerão em uma ramificação chamada Geral.
+
+Para nomes com `C\#`, use aspas simples no YAML, como `ramo: 'C\# e boas práticas'`. Assim, a barra é preservada no arquivo e o card exibe o nome corretamente.
 
 ### Passo 3 — Criar o conteúdo
 

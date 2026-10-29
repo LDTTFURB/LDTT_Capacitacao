@@ -1,4 +1,6 @@
-# 04. Primeira execução e exploração do projeto
+# Primeira execução e exploração do projeto
+
+> Ramificação: **Unity**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Abra o projeto, execute a cena inicial e reconheça seus principais elementos.
 
 ## Pré-requisitos
 
-Concluir o tutorial 03: Git: clone e branch de trabalho.
+Concluir [Preparação do ambiente e acessos](../01-preparacao-do-ambiente/conteudo.md) e [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md), da ramificação Git/GitHub. Tenha a pasta do projeto no computador e a versão correta do Editor instalada.
 
 ## Abra no Unity Hub
 
@@ -51,6 +53,23 @@ A primeira abertura pode demorar mais. Antes de modificar qualquer código, veri
 
 > Alterações feitas durante o modo Play podem não permanecer após encerrar a execução. Para uma mudança persistente, saia do Play, aplique a alteração no modo de edição e salve o que foi modificado.
 
+## Prática de fundamentos e material de apoio
+
+Em um projeto de treinamento, crie uma cena com um GameObject, associe um script e adicione um campo público simples, como um número inteiro de pontos, para editá-lo no Inspector. Observe o componente Transform, que guarda posição, rotação e escala. Use um prefab para estudar como uma configuração de objetos pode ser reutilizada. Compare o exercício com um objeto do projeto do laboratório.
+
+**Estudo indicado:** [Vídeo de introdução à Unity](https://www.youtube.com/watch?v=pyw2HTsdkEQ).
+
+**Curso introdutório:** [Unity Essentials](https://learn.unity.com/pathway/unity-essentials). Use-o para praticar os conceitos básicos do Editor em um ambiente de treinamento.
+
+### Cursos de apoio: Unity 2D e 3D
+
+Escolha com a equipe o curso mais relacionado ao seu projeto e à sua experiência:
+
+- [Curso Unity 2D — Udemy](https://www.udemy.com/share/101WYy3@Sm21KC48vdtREKT4CVhsnhoZu4FNxubjR2yMmTUOQam2YxQsJTipt9RtDnAB9rKb/).
+- [Curso Unity 3D — Udemy](https://www.udemy.com/share/101XCe3@WvQmbY0TW23Kt_f-F9FTMazvUdWBKBYG8ID6XMu-IcgFexio5gRQcqBqWqCXHeQe/).
+
+Não é necessário concluir os dois cursos para seguir a trilha. Alterne os trechos que ajudam na sua tarefa com exercícios em um projeto de treinamento.
+
 ## Resultado e critérios de conclusão
 
 - [ ] Abri o projeto com a versão correta.
@@ -59,6 +78,6 @@ A primeira abertura pode demorar mais. Antes de modificar qualquer código, veri
 
 ## Navegação
 
-[← Anterior: Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Nomenclatura e organização de arquivos →](../05-nomenclatura-e-arquivos/conteudo.md)
+[Próximo nesta ramificação: Interface: resolução, painéis e desempenho →](../08-interface-e-desempenho/conteudo.md)

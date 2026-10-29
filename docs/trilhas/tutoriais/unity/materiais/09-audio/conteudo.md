@@ -1,4 +1,6 @@
-# 09. Áudio: organização e reprodução
+# Áudio: organização e reprodução
+
+> Ramificação: **Unity**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Conheça o gerenciamento de sons, os materiais de áudio e a nomenclatura utiliz
 
 ## Pré-requisitos
 
-Concluir o tutorial 08: Interface: resolução, painéis e desempenho.
+Concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar áudio sem concluir o material de interface.
 
 ## 1. Gerenciamento de áudio
 
@@ -46,6 +48,8 @@ Execute um fluxo que contenha música e efeito sonoro. Identifique o arquivo e a
 
 ## Navegação
 
-[← Anterior: Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Implemente e teste sua primeira alteração →](../10-primeira-alteracao/conteudo.md)
+[← Anterior nesta ramificação: Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md)
+
+Aplique o que precisar na sua tarefa: [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md). Consulte os pré-requisitos dessa prática antes de começar.

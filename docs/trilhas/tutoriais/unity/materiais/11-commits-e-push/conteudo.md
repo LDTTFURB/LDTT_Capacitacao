@@ -1,4 +1,6 @@
-# 11. Registre commits e envie sua branch
+# Registre commits e envie sua branch
+
+> Ramificação: **Git/GitHub**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Revise as alterações, registre commits claros e envie o trabalho ao GitHub.
 
 ## Pré-requisitos
 
-Concluir o tutorial 10: Implemente e teste sua primeira alteração. Trabalhar na branch própria preparada no tutorial 03.
+Concluir [Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md). Para executar os passos no projeto do laboratório, tenha uma alteração implementada e testada, como a de [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md). Você também pode praticar em um repositório de treinamento.
 
 ## Registre e envie suas alterações
 
@@ -41,6 +43,8 @@ Evite mensagens vagas, como `alterações`, `teste` ou `arrumei`.
 
 ## Navegação
 
-[← Anterior: Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Pull Request, revisão e próxima tarefa →](../12-pull-request-e-revisao/conteudo.md)
+[← Anterior nesta ramificação: Git: clone e branch de trabalho](../03-git-clone-e-branches/conteudo.md)
+
+[Próximo nesta ramificação: Pull Request, revisão e próxima tarefa →](../12-pull-request-e-revisao/conteudo.md)

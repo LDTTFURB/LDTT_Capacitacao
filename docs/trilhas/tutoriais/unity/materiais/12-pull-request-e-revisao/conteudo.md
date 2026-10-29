@@ -1,4 +1,6 @@
-# 12. Pull Request, revisão e próxima tarefa
+# Pull Request, revisão e próxima tarefa
+
+> Ramificação: **Git/GitHub**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Solicite a revisão da entrega e acompanhe sua integração em develop.
 
 ## Pré-requisitos
 
-Concluir o tutorial 11: Registre commits e envie sua branch. Trabalhar na branch própria preparada no tutorial 03.
+Concluir [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md) e confirmar que os commits da sua tarefa chegaram ao GitHub. Para a primeira entrega no laboratório, utilize a alteração testada em [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
 
 ## Apresente sua entrega
 
@@ -75,6 +77,8 @@ A integração de `develop` em `main` segue o fluxo de estabilização e revisã
 
 ## Navegação
 
-[← Anterior: Registre commits e envie sua branch](../11-commits-e-push/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Rotina de trabalho e solução de problemas →](../13-rotina-e-solucao-de-problemas/conteudo.md)
+[← Anterior nesta ramificação: Registre commits e envie sua branch](../11-commits-e-push/conteudo.md)
+
+Para acompanhar a primeira entrega, consulte [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).

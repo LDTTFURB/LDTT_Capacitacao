@@ -1,4 +1,6 @@
-# 03. Git: clone e branch de trabalho
+# Git: clone e branch de trabalho
+
+> Ramificação: **Git/GitHub**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Obtenha o projeto e crie uma branch conforme o padrão do LDTT.
 
 ## Pré-requisitos
 
-Concluir o tutorial 02: Fundamentos de C\#, Unity e materiais de estudo.
+Concluir [Preparação do ambiente e acessos](../01-preparacao-do-ambiente/conteudo.md) e confirmar o acesso ao repositório no GitHub. Não é necessário concluir os estudos de programação para clonar o projeto.
 
 ## Clone o repositório
 
@@ -56,6 +58,12 @@ Escolha um nome curto e relacionado ao trabalho. Uma nova tarefa deve, preferenc
 
 > Para esta integração, você pode usar um nome como `integracao-inicial/seu-nome`. Alinhe a primeira tarefa com a equipe; se ela exigir outra branch, crie-a a partir da `develop` atualizada antes de editar.
 
+## Materiais de apoio
+
+- [Introdução a Git e GitHub — Alura](https://www.alura.com.br/artigos/o-que-e-git-github).
+- [Vídeo sobre GitHub Desktop](https://www.youtube.com/watch?v=y_3hJcw0dns).
+- [Vídeo de estudo de Git e GitHub](https://www.youtube.com/watch?v=-l4Aa8wef8s).
+
 ## Resultado e critérios de conclusão
 
 - [ ] Clonei o repositório e li o README.
@@ -64,6 +72,8 @@ Escolha um nome curto e relacionado ao trabalho. Uma nova tarefa deve, preferenc
 
 ## Navegação
 
-[← Anterior: Fundamentos de C\#, Unity e materiais de estudo](../02-fundamentos-e-estudos/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Primeira execução e exploração do projeto →](../04-primeira-execucao-na-unity/conteudo.md)
+[Próximo nesta ramificação: Registre commits e envie sua branch →](../11-commits-e-push/conteudo.md)
+
+Para iniciar o trabalho na Unity, siga para [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md). Estude commits e PRs agora ou retome esses materiais quando tiver uma alteração para enviar.

@@ -1,4 +1,6 @@
-# 08. Interface: resolução, painéis e desempenho
+# Interface: resolução, painéis e desempenho
+
+> Ramificação: **Unity**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Verifique se a interface funciona nas telas previstas, acompanhe a abertura de p
 
 ## Pré-requisitos
 
-Concluir o tutorial 07: Padrões de projeto na Unity.
+Concluir [Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar interface sem concluir padrões de projeto ou áudio.
 
 ## 1. Configuração da interface
 
@@ -51,6 +53,8 @@ Escolha uma tela existente, teste duas proporções de tela previstas pelo proje
 
 ## Navegação
 
-[← Anterior: Padrões de projeto na Unity](../07-padroes-de-projeto/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Áudio: organização e reprodução →](../09-audio/conteudo.md)
+[← Anterior nesta ramificação: Primeira execução e exploração do projeto](../04-primeira-execucao-na-unity/conteudo.md)
+
+[Próximo nesta ramificação: Áudio: organização e reprodução →](../09-audio/conteudo.md)

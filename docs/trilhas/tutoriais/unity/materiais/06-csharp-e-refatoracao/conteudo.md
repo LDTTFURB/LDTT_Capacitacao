@@ -1,4 +1,6 @@
-# 06. C\#: contratos, eventos e refatoração
+# C\#: contratos, eventos e refatoração
+
+> Ramificação: **C\# e boas práticas**.
 
 ## Objetivo
 
@@ -6,7 +8,7 @@ Estude interfaces, delegates, eventos, ScriptableObjects, refatoração e SOLID.
 
 ## Pré-requisitos
 
-Concluir o tutorial 05: Nomenclatura e organização de arquivos.
+Concluir [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md) e conseguir ler uma classe simples com campos e métodos. Retome os fundamentos quando encontrar uma dificuldade.
 
 ## 1. Interfaces
 
@@ -26,7 +28,7 @@ No código de eventos C\#, procure o uso de `+=`, que inscreve um método, e de 
 
 ## 3. ScriptableObjects
 
-Um **ScriptableObject** permite guardar dados em um asset da Unity, separado dos objetos da cena. Por exemplo, um asset pode reunir nome, imagem e valor de um item para consulta por outros objetos. Estude como o projeto organiza esses dados reutilizáveis. Localize um exemplo, se houver, e identifique quais dados ele armazena e quais objetos o consultam. Confira com a equipe a convenção de nome apresentada no tutorial anterior.
+Um **ScriptableObject** permite guardar dados em um asset da Unity, separado dos objetos da cena. Por exemplo, um asset pode reunir nome, imagem e valor de um item para consulta por outros objetos. Estude como o projeto organiza esses dados reutilizáveis. Localize um exemplo, se houver, e identifique quais dados ele armazena e quais objetos o consultam. Confira com a equipe a convenção de nome apresentada em [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md).
 
 **Estudo indicado:** [ScriptableObjects — EN](https://youtu.be/aPXvoWVabPY) e [ScriptableObjects — PT-BR](https://youtu.be/_6yYIf__m7s).
 
@@ -68,6 +70,8 @@ Selecione com um colega um script pequeno e identifique sua responsabilidade e s
 
 ## Navegação
 
-[← Anterior: Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md)
+[← Voltar ao mapa da trilha](../../conteudo.md)
 
-[Próximo: Padrões de projeto na Unity →](../07-padroes-de-projeto/conteudo.md)
+[← Anterior nesta ramificação: Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md)
+
+[Próximo nesta ramificação: Padrões de projeto na Unity →](../07-padroes-de-projeto/conteudo.md)

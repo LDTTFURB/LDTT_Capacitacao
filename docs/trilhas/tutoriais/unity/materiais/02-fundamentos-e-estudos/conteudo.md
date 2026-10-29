@@ -26,6 +26,8 @@ Uma cena reúne os objetos de uma parte do jogo. Na Unity, esses objetos são ch
 
 **Exercício sugerido:** em um projeto de treinamento, crie uma cena com um objeto, associe um script e adicione ao script um campo público simples, como um número inteiro de pontos, para editá-lo no Inspector.
 
+> Realize os tutorias do curso [Unity Essentials](https://learn.unity.com/pathway/unity-essentials) para aprender a utilizar o editor da Unity.
+
 ### Etapa 3: Git e colaboração
 
 Conheça quatro termos que serão usados nos próximos tutoriais: **branch** é uma linha de trabalho no histórico; **commit** registra um conjunto de alterações; **push** envia commits ao repositório remoto, neste caso no GitHub; e **Pull Request (PR)** é um pedido de revisão e integração das alterações. Salvar um arquivo no computador, por si só, não cria um commit nem envia a mudança ao GitHub.
@@ -36,8 +38,8 @@ Conheça quatro termos que serão usados nos próximos tutoriais: **branch** é 
 
 Use os dois cursos abaixo como apoio ao estudo, conforme a orientação da equipe.
 
-- [Curso complementar 1 — Udemy](https://www.udemy.com/share/101WYy3@Sm21KC48vdtREKT4CVhsnhoZu4FNxubjR2yMmTUOQam2YxQsJTipt9RtDnAB9rKb/).
-- [Curso complementar 2 — Udemy](https://www.udemy.com/share/101XCe3@WvQmbY0TW23Kt_f-F9FTMazvUdWBKBYG8ID6XMu-IcgFexio5gRQcqBqWqCXHeQe/).
+- [Curso Unity 2D — Udemy](https://www.udemy.com/share/101WYy3@Sm21KC48vdtREKT4CVhsnhoZu4FNxubjR2yMmTUOQam2YxQsJTipt9RtDnAB9rKb/).
+- [Curso Unity 3D — Udemy](https://www.udemy.com/share/101XCe3@WvQmbY0TW23Kt_f-F9FTMazvUdWBKBYG8ID6XMu-IcgFexio5gRQcqBqWqCXHeQe/).
 
 Combine com a equipe quais conteúdos priorizar de acordo com sua experiência e com as necessidades da primeira tarefa.
 

@@ -6,11 +6,9 @@ hide:
 
 # Unity e desenvolvimento em equipe
 
-A trilha começa em **Introdução geral**, no nível 0. Seus filhos, no nível 1, apresentam Unity, Git/GitHub, C\# e a rotina do laboratório. Cada ramo se aprofunda em conteúdos filhos, como áudio e interface dentro de Unity.
-
 ## Árvore de conteúdos
 
-Comece pelo topo e siga os assuntos que precisa estudar. As linhas ligam cada conteúdo ao seu pai. Essa organização mostra o assunto de cada material; os pré-requisitos de cada página indicam o que é necessário para realizar os exercícios, inclusive em outros ramos.
+Comece pelo topo e siga os assuntos que precisa estudar. As linhas ligam cada conteúdo ao seu antecessor. Essa organização mostra o assunto de cada material; os pré-requisitos de cada página indicam o que é necessário para realizar os exercícios, inclusive em outros ramos.
 
 <!-- GERAR_CARDS -->
 

@@ -81,16 +81,10 @@ Não é necessário concluir os dois cursos para seguir a trilha. Alterne os tre
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+[← Anterior: Introdução geral](../01-preparacao-do-ambiente/conteudo.md)
 
-**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
+**Próximos:**
 
-**Aprofunde este assunto:**
-
-- [Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md).
-- [Áudio: organização e reprodução](../09-audio/conteudo.md).
-- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md).
+- [Interface: resolução, painéis e desempenho →](../08-interface-e-desempenho/conteudo.md)
+- [Áudio: organização e reprodução →](../09-audio/conteudo.md)
+- [Implemente e teste sua primeira alteração →](../10-primeira-alteracao/conteudo.md)

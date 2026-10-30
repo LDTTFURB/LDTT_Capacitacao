@@ -32,11 +32,4 @@ Anote a cena utilizada, os passos executados e o resultado observado. Por exempl
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
-- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).
+[← Anterior: Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md)

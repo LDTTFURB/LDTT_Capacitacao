@@ -68,10 +68,6 @@ Selecione com um colega um script pequeno e identifique sua responsabilidade e s
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+[← Anterior: Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md)
 
-**Conteúdo pai:** [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md).
-
-**Aprofunde este assunto:**
-
-- [Padrões de projeto na Unity](../07-padroes-de-projeto/conteudo.md).
+[Próximo: Padrões de projeto na Unity →](../07-padroes-de-projeto/conteudo.md)

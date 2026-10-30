@@ -55,10 +55,4 @@ Para concluir a etapa, basta demonstrar essa análise. A implementação de um p
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
+[← Anterior: C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md)

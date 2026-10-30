@@ -46,10 +46,4 @@ Execute um fluxo que contenha música e efeito sonoro. Identifique o arquivo e a
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Interface: resolução, painéis e desempenho](../08-interface-e-desempenho/conteudo.md).
+[← Anterior: Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md)

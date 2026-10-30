@@ -75,11 +75,4 @@ Se seu PR ainda estiver em revisão, mantenha esse item do checklist pendente at
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
-- [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md).
+[← Anterior: Introdução geral](../01-preparacao-do-ambiente/conteudo.md)

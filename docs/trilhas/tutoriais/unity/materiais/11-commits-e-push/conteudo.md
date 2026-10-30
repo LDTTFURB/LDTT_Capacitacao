@@ -41,10 +41,6 @@ Evite mensagens vagas, como `alterações`, `teste` ou `arrumei`.
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+[← Anterior: Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md)
 
-**Conteúdo pai:** [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md).
-
-**Aprofunde este assunto:**
-
-- [Pull Request, revisão e próxima tarefa](../12-pull-request-e-revisao/conteudo.md).
+[Próximo: Pull Request, revisão e próxima tarefa →](../12-pull-request-e-revisao/conteudo.md)

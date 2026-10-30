@@ -75,10 +75,4 @@ A integração de `develop` em `main` segue o fluxo de estabilização e revisã
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).
+[← Anterior: Registre commits e envie sua branch](../11-commits-e-push/conteudo.md)

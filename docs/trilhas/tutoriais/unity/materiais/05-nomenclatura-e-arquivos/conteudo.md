@@ -72,10 +72,4 @@ As orientações abaixo complementam o guia para o trabalho em equipe:
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md).
+[← Anterior: Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md)

@@ -51,10 +51,4 @@ Escolha uma tela existente, teste duas proporções de tela previstas pelo proje
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
-
-**Conteúdo pai:** [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Áudio: organização e reprodução](../09-audio/conteudo.md).
+[← Anterior: Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md)

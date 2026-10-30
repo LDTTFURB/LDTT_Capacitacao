@@ -81,11 +81,9 @@ Não suponha que a IDE foi instalada automaticamente com o Editor: confira a ins
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+**Próximos:**
 
-**Aprofunde este assunto:**
-
-- [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md).
-- [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md).
-- [Introdução ao C\#](../02-fundamentos-e-estudos/conteudo.md).
-- [Rotina de trabalho e solução de problemas](../13-rotina-e-solucao-de-problemas/conteudo.md).
+- [Introdução à Unity →](../04-primeira-execucao-na-unity/conteudo.md)
+- [Introdução ao Git/GitHub →](../03-git-clone-e-branches/conteudo.md)
+- [Introdução ao C\# →](../02-fundamentos-e-estudos/conteudo.md)
+- [Rotina de trabalho e solução de problemas →](../13-rotina-e-solucao-de-problemas/conteudo.md)

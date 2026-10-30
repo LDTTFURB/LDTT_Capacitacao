@@ -75,14 +75,6 @@ Escolha um nome curto e relacionado ao trabalho. Uma nova tarefa deve, preferenc
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+[← Anterior: Introdução geral](../01-preparacao-do-ambiente/conteudo.md)
 
-**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
-
-**Aprofunde este assunto:**
-
-- [Registre commits e envie sua branch](../11-commits-e-push/conteudo.md).
-
-**Conteúdos relacionados:**
-
-- [Implemente e teste sua primeira alteração](../10-primeira-alteracao/conteudo.md).
+[Próximo: Registre commits e envie sua branch →](../11-commits-e-push/conteudo.md)

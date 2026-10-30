@@ -43,11 +43,9 @@ Não é necessário concluir um curso inteiro para avançar. Pratique os conceit
 
 ## Navegação
 
-[← Voltar à árvore de conteúdos](../../conteudo.md)
+[← Anterior: Introdução geral](../01-preparacao-do-ambiente/conteudo.md)
 
-**Conteúdo pai:** [Introdução geral](../01-preparacao-do-ambiente/conteudo.md).
+**Próximos:**
 
-**Aprofunde este assunto:**
-
-- [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md).
-- [C\#: contratos, eventos e refatoração](../06-csharp-e-refatoracao/conteudo.md).
+- [Nomenclatura e organização de arquivos →](../05-nomenclatura-e-arquivos/conteudo.md)
+- [C\#: contratos, eventos e refatoração →](../06-csharp-e-refatoracao/conteudo.md)

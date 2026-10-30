@@ -280,16 +280,16 @@ CSS_HIERARQUIA = """
 /* Cada filho desenha o seu segmento vertical e o cotovelo ate o card.
    O ultimo segmento termina na ligacao, sem prolongar a linha para baixo. */
 .md-typeset nav.arvore-hierarquia ul.arvore-filhos {
-  margin-left: 12px; padding-left: 20px;
+  margin-left: 8px; padding-left: 12px;
 }
 .md-typeset nav.arvore-hierarquia ul.arvore-filhos > li { padding-top: 16px; }
 .arvore-hierarquia ul.arvore-filhos > li::before {
-  content: ''; position: absolute; top: 0; bottom: 0; left: -20px;
+  content: ''; position: absolute; top: 0; bottom: 0; left: -12px;
   border-left: 2px solid var(--conector);
 }
 .arvore-hierarquia ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
 .arvore-hierarquia ul.arvore-filhos > li::after {
-  content: ''; position: absolute; left: -20px; top: 38px; width: 20px;
+  content: ''; position: absolute; left: -12px; top: 38px; width: 12px;
   border-top: 2px solid var(--conector);
 }
 /* A linha horizontal cobre o intervalo inteiro entre os ramos da raiz. */
@@ -310,38 +310,6 @@ CSS_HIERARQUIA = """
 .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
   left: 50%; top: -20px; width: 0; height: 20px;
   border: 0; border-left: 2px solid var(--conector);
-}
-/* Os ramos internos não podem ganhar mais recuo a cada geração.
-   O nível inicial (raiz e seus quatro filhos) permanece intacto. */
-.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos {
-  position: relative;
-  margin: 0;
-  padding: 12px 0 0;
-}
-/* Liga o centro do card-pai ao trilho lateral dos filhos. */
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: -10px;
-  width: calc(50% + 10px);
-  border-top: 2px solid var(--conector);
-}
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 12px;
-  border-left: 2px solid var(--conector);
-}
-/* Mantém os cards descendentes alinhados à coluna do pai. */
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::before {
-  left: -10px;
-}
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::after {
-  left: -10px;
-  width: 10px;
 }
 @media (max-width: 900px) {
   .arvore-hierarquia .arvore-raiz > .arvore-card { margin: 0; max-width: none; }

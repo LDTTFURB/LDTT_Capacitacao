@@ -1,0 +1,20 @@
+{
+  "unity/01-preparacao-do-ambiente": "unity/introducao-geral",
+  "unity/02-fundamentos-e-estudos": "csharp/introducao-csharp",
+  "unity/03-git-clone-e-branches": "git/introducao-git",
+  "unity/04-primeira-execucao-na-unity": "unity/introducao-unity",
+  "unity/05-nomenclatura-e-arquivos": "boas-praticas/nomenclatura-e-arquivos",
+  "unity/06-csharp-e-refatoracao": "csharp/contratos-eventos-refatoracao",
+  "unity/07-padroes-de-projeto": "csharp/padroes-de-projeto",
+  "unity/08-interface-e-desempenho": "unity/interface-e-desempenho",
+  "unity/09-audio": "unity/audio",
+  "unity/10-primeira-alteracao": "unity/primeira-alteracao",
+  "unity/11-commits-e-push": "git/commits-e-push",
+  "unity/12-pull-request-e-revisao": "git/pull-request-e-revisao",
+  "unity/13-rotina-e-solucao-de-problemas": "boas-praticas/rotina-e-solucao-de-problemas",
+  "vr/01-introducao-a-vr": "vr/introducao-vr",
+  "vr/02-cardboard-preparacao": "vr/cardboard-preparacao",
+  "vr/03-cardboard-primeira-execucao": "vr/cardboard-primeira-execucao",
+  "vr/04-quest-preparacao": "vr/quest-preparacao",
+  "vr/05-quest-primeira-cena": "vr/quest-primeira-cena"
+}

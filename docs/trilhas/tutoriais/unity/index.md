@@ -1,10 +1,8 @@
 ---
-title: 'Unity e desenvolvimento em equipe'
-description: 'Estude Unity, Git/GitHub, programação e a rotina de trabalho no laboratório.'
+title: 'Unity'
+description: 'Aprenda Unity e encontre tutoriais relacionados de Git, C# e boas práticas.'
 tags:
   - Unity
-  - Git
-  - GitHub
+  - Jogos
   - CSharp
-  - Boas práticas
 ---

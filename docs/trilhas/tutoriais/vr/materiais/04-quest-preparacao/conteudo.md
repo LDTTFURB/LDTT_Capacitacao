@@ -26,29 +26,32 @@ As telas e os menus da Meta mudam com frequência. Se algo estiver diferente, co
 
 ## Crie o projeto
 
-1. No MQDH, crie um novo projeto Unity e escolha a versão do Editor indicada pela equipe.
-2. Na seção de configuração, defina **XR Plugin** como **OpenXR** e **SDKs** como **All**. Essa opção instala os pacotes do Meta XR All-in-One SDK.
-3. Abra o projeto. No Windows, se a Unity pedir para trocar a Graphics API para Direct3D11, selecione **Yes, Switch and Restart**.
-
-Evite o plugin **OculusXR**, que está descontinuado.
+1. No Unity Hub, instale a versão do Editor indicada pela equipe, com o módulo **Android Build Support** e as opções **OpenJDK** e **Android SDK & NDK Tools**.
+2. Ainda no Unity Hub, crie um novo projeto com essa versão, usando o modelo **Universal 3D**.
+3. Com o projeto aberto, acesse o [Meta XR All-in-One SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-all-in-one-sdk-269657) na Unity Asset Store e clique em **Add to My Assets**.
+4. Clique em **Open in Unity**. No **Package Manager**, selecione o SDK e clique em **Install**.
+5. Se a Unity pedir para atualizar o **OVRPlugin** ou para trocar a Graphics API para Direct3D11, aceite e deixe o Editor reiniciar.
 
 ## Ajuste as configurações
 
-1. Abra **Edit > Project Settings > XR Plug-in Management > OpenXR**.
-2. Em **OpenXR Feature Groups**, ative **Meta XR** para **Standalone** e **Android**.
-3. Abra **Window > Meta > Tools > Project Setup Tool**.
-4. Nas abas **Standalone** e **Android**, clique em **Fix All** para os problemas pendentes.
-5. Revise os itens recomendados e faça os ajustes manuais indicados pela ferramenta.
+1. Abra **Edit > Project Settings > XR Plug-in Management**. Se a ferramenta não estiver instalada, clique em **Install XR Plugin Management**.
+2. Nas abas **Windows, Mac, Linux** e **Android**, selecione **OpenXR**. Evite o plugin **Oculus**, que está descontinuado.
+3. Em **XR Plug-in Management > OpenXR**, na seção **OpenXR Feature Groups**, ative **Meta XR** para **Standalone** e **Android**.
+4. Abra **Window > Meta > Tools > Project Setup Tool**.
+5. Nas abas **Standalone** e **Android**, clique em **Fix All** para os problemas pendentes.
+6. Revise os itens recomendados e faça os ajustes manuais indicados pela ferramenta.
 
 ## Resultado e critérios de conclusão
 
 - [ ] Ativei o modo de desenvolvedor e o headset aparece no MQDH.
-- [ ] Criei o projeto com OpenXR e o Meta XR SDK.
+- [ ] Criei o projeto no Unity Hub e instalei o Meta XR SDK.
+- [ ] Configurei o projeto para usar OpenXR.
 - [ ] Resolvi os problemas apontados pelo Project Setup Tool.
 
 ## Referências
 
 - [Configuração do projeto Unity](https://developers.meta.com/horizon/documentation/unity/unity-project-setup/)
+- [Instalação dos pacotes Meta XR](https://developers.meta.com/horizon/documentation/unity/unity-package-manager/)
 - [Ativação do modo de desenvolvedor](https://developers.meta.com/horizon/documentation/android-apps/enable-developer-mode/)
 
 ## Navegação

@@ -8,7 +8,7 @@ Instale o Cardboard XR Plugin e configure um projeto Unity para gerar um aplicat
 
 Concluir [Introdução à VR](../01-introducao-a-vr/conteudo.md). Você também precisará de:
 
-- Unity 6000.0.23f1 ou mais recente, com o módulo **Android Build Support**.
+- Unity 6000.0.23f1 ou mais recente (consultar versão atual utilizada pela equipe), com o módulo **Android Build Support**.
 - Git instalado e disponível no `PATH` do sistema.
 - Um celular Android 8.0 ou mais recente e um visor Cardboard.
 

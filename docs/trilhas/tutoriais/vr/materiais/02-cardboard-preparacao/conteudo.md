@@ -72,9 +72,3 @@ Abra **Edit > Project Settings > XR Plug-in Management**. Na aba do Android, em 
 - [ ] Instalei o plugin e importei o exemplo Hello Cardboard.
 - [ ] Configurei o projeto para Android.
 - [ ] Adicionei as dependências e ativei o Cardboard XR Plugin.
-
-## Navegação
-
-[← Anterior: Introdução à VR](../01-introducao-a-vr/conteudo.md)
-
-[Próximo: Execute a cena de exemplo no celular →](../03-cardboard-primeira-execucao/conteudo.md)

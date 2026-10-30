@@ -48,7 +48,3 @@ Abra os scripts usados pela cena e identifique como o objeto reage quando a ret�
 ## Referências
 
 - [Guia inicial do Cardboard para Unity](https://developers.google.com/cardboard/develop/unity/quickstart)
-
-## Navegação
-
-[← Anterior: Prepare o projeto para o Google Cardboard](../02-cardboard-preparacao/conteudo.md)

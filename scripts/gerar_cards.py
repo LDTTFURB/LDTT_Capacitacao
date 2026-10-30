@@ -1,88 +1,17 @@
 
 from pathlib import Path
-from html import escape
-from urllib.parse import quote
-import re
-import yaml
+
+from gerar_arvores import gerar_card_trilha, ler_trilhas
 
 BASE = Path("docs/trilhas")
-TUTORIAIS = BASE / "tutoriais"
 DESTINO = BASE / "index.md"
 
 
-def ler_metadados(arquivo):
-    texto = arquivo.read_text(encoding="utf-8-sig")
-    texto = texto.lstrip(" \t\r\n")
-
-    resultado = re.match(
-        r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\Z)",
-        texto,
-        re.DOTALL
-    )
-
-    if not resultado:
-        raise ValueError(f"Metadados ausentes: {arquivo}")
-
-    dados = yaml.safe_load(resultado.group(1))
-
-    if not isinstance(dados, dict):
-        raise ValueError(f"Metadados invalidos: {arquivo}")
-
-    return dados
-
-
-cards = []
-
-if TUTORIAIS.exists():
-    arquivos = sorted(
-        TUTORIAIS.glob("*/index.md"),
-        key=lambda p: p.parent.name.lower()
-    )
-
-    for arquivo in arquivos:
-        try:
-            dados = ler_metadados(arquivo)
-
-            titulo = dados.get("title")
-            descricao = dados.get("description")
-            tags = dados.get("tags")
-
-            if not isinstance(titulo, str) or not titulo.strip():
-                raise ValueError("title invalido")
-
-            if not isinstance(descricao, str):
-                raise ValueError("description invalida")
-
-            if (
-                not isinstance(tags, list)
-                or not tags
-                or not all(isinstance(t, str) and t.strip() for t in tags)
-            ):
-                raise ValueError("tags invalidas")
-
-            pasta = quote(arquivo.parent.name, safe="")
-
-            # Novo formato: abre conteudo.md.
-            # Compatibilidade com trilhas antigas: abre index.md.
-            if (arquivo.parent / "conteudo.md").exists():
-                link = f"tutoriais/{pasta}/conteudo/"
-            else:
-                link = f"tutoriais/{pasta}/"
-
-            nomes_tags = ", ".join(tags)
-
-            cards.append(f"""
-<a class="ldtt-card"
-   href="{escape(link, quote=True)}"
-   data-tags="{escape(nomes_tags, quote=True)}">
-  <strong>{escape(titulo)}</strong>
-  <span>{escape(descricao)}</span>
-  <small>{escape(nomes_tags)}</small>
-</a>
-""")
-
-        except (ValueError, yaml.YAMLError) as erro:
-            print(f"AVISO: {arquivo}: {erro}")
+# Subtrilhas ficam dentro da trilha-mae, mas continuam sendo achadas pela busca.
+cards = [
+    gerar_card_trilha(pasta, dados, subtrilha=bool(dados.get("pai")))
+    for pasta, dados in ler_trilhas().items()
+]
 
 
 pagina = """---
@@ -125,59 +54,9 @@ pagina += """
   color: var(--md-default-fg-color);
 }
 
-.ldtt-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.ldtt-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 14px;
-  min-height: 110px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 10px;
-  color: inherit !important;
-  text-decoration: none !important;
-  transition: border-color 0.2s;
-}
-
-.ldtt-card:hover {
-  border-color: var(--md-primary-fg-color);
-}
-
-.ldtt-card strong {
-  font-size: 15px;
-}
-
-.ldtt-card span {
-  font-size: 12px;
-  color: var(--md-default-fg-color--light);
-}
-
-.ldtt-card small {
-  margin-top: auto;
-  color: var(--md-primary-fg-color);
-  font-size: 11px;
-}
-
 .ldtt-card[hidden],
 #sem-resultados[hidden] {
   display: none !important;
-}
-
-@media (max-width: 900px) {
-  .ldtt-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 580px) {
-  .ldtt-grid {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
 
@@ -198,9 +77,9 @@ pagina += """
         .toLowerCase()
         .split(",");
 
-      const mostrar = !termo || tags.some(
-        tag => tag.trim().includes(termo)
-      );
+      const mostrar = termo
+        ? tags.some(tag => tag.trim().includes(termo))
+        : !card.hasAttribute("data-subtrilha");
 
       card.hidden = !mostrar;
 

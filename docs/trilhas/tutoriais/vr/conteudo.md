@@ -24,4 +24,4 @@ Comece pelo topo e depois siga o ramo da plataforma usada no seu projeto: Google
 2. Configure o headset e o projeto em [Prepare o headset e o projeto para o Meta Quest](materiais/04-quest-preparacao/conteudo.md).
 3. Teste no headset em [Crie sua primeira cena interativa no Quest](materiais/05-quest-primeira-cena/conteudo.md).
 
-Para trabalhar em um projeto do laboratório, consulte também a trilha [Unity e desenvolvimento em equipe](../unity/conteudo.md).
+Para trabalhar em um projeto do laboratório, consulte também a trilha [Começando no LDTT](../comecando-no-ldtt/conteudo.md).

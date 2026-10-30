@@ -83,7 +83,3 @@ Use o [OVR Metrics Tool](https://developers.meta.com/horizon/documentation/unity
 - [Building Blocks](https://developers.meta.com/horizon/documentation/unity/bb-overview/)
 - [Interaction SDK](https://developers.meta.com/horizon/documentation/unity/unity-isdk-interaction-sdk-overview/), para interações que os blocos não cobrem
 - [Configuração de build](https://developers.meta.com/horizon/documentation/unity/unity-build/)
-
-## Navegação
-
-[← Anterior: Prepare o headset e o projeto para o Meta Quest](../04-quest-preparacao/conteudo.md)

@@ -6,7 +6,7 @@ Entenda os conceitos básicos de Realidade Virtual e identifique qual ramo da tr
 
 ## Pré-requisitos
 
-Ter a Unity instalada e conhecer o Editor. Se ainda não conhece, comece por [Introdução geral](../../../unity/materiais/01-preparacao-do-ambiente/conteudo.md) e [Introdução à Unity](../../../unity/materiais/04-primeira-execucao-na-unity/conteudo.md), da trilha Unity.
+Ter a Unity instalada e conhecer o Editor. Se ainda não conhece, comece por [Introdução geral](../../../comecando-no-ldtt/materiais/01-preparacao-do-ambiente/conteudo.md) e [Introdução à Unity](../../../fundamentos-unity/materiais/04-primeira-execucao-na-unity/conteudo.md), da trilha Fundamentos da Unity.
 
 ## O que você vai aprender
 
@@ -46,10 +46,3 @@ Estas orientações valem para as duas plataformas:
 
 - [ ] Sei explicar a diferença entre 3DoF e 6DoF.
 - [ ] Identifiquei a plataforma e o equipamento do meu projeto.
-
-## Navegação
-
-**Próximos:**
-
-- [Prepare o projeto para o Google Cardboard →](../02-cardboard-preparacao/conteudo.md)
-- [Prepare o headset e o projeto para o Meta Quest →](../04-quest-preparacao/conteudo.md)

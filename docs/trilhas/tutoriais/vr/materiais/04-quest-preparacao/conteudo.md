@@ -53,9 +53,3 @@ As telas e os menus da Meta mudam com frequência. Se algo estiver diferente, co
 - [Configuração do projeto Unity](https://developers.meta.com/horizon/documentation/unity/unity-project-setup/)
 - [Instalação dos pacotes Meta XR](https://developers.meta.com/horizon/documentation/unity/unity-package-manager/)
 - [Ativação do modo de desenvolvedor](https://developers.meta.com/horizon/documentation/android-apps/enable-developer-mode/)
-
-## Navegação
-
-[← Anterior: Introdução à VR](../01-introducao-a-vr/conteudo.md)
-
-[Próximo: Crie sua primeira cena interativa no Quest →](../05-quest-primeira-cena/conteudo.md)

@@ -1,10 +1,10 @@
 ---
-title: 'Unity e desenvolvimento em equipe'
-description: 'Estude Unity, Git/GitHub, programação e a rotina de trabalho no laboratório.'
+title: 'Unity'
+description: 'Fundamentos do Editor e trilhas de Unity 2D, Unity 3D e Realidade Virtual.'
 tags:
   - Unity
-  - Git
-  - GitHub
-  - CSharp
-  - Boas práticas
+relacionadas:
+  - 'comecando-no-ldtt'
+  - 'git'
+  - 'boas-praticas'
 ---

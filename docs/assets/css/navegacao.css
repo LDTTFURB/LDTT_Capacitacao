@@ -19,6 +19,57 @@
   flex: 0 0 auto;
 }
 
+/* Cards de trilhas */
+.ldtt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ldtt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  min-height: 110px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s;
+}
+
+.ldtt-card:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+.ldtt-card strong {
+  font-size: 15px;
+}
+
+.ldtt-card span {
+  font-size: 12px;
+  color: var(--md-default-fg-color--light);
+}
+
+.ldtt-card small {
+  margin-top: auto;
+  color: var(--md-primary-fg-color);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .ldtt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .ldtt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Botão voltar */
 .ldtt-voltar {
   display: inline-flex;

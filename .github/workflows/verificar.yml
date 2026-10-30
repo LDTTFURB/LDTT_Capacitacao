@@ -1,0 +1,37 @@
+name: Verificar conteudo
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v7
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependencias
+        run: pip install zensical pyyaml
+
+      - name: Verificar links
+        run: python scripts/verificar_links.py
+
+      - name: Gerar cards dos tutoriais
+        run: python scripts/gerar_cards.py
+
+      - name: Gerar arvores das trilhas
+        run: python scripts/gerar_arvores.py
+
+      - name: Gerar site
+        run: zensical build --clean

@@ -34,6 +34,9 @@ jobs:
         run: pip install zensical pyyaml
 
       
+      - name: Verificar links
+        run: python scripts/verificar_links.py
+
       - name: Gerar cards dos tutoriais
         run: python scripts/gerar_cards.py
 

@@ -13,7 +13,7 @@ Neste guia, você aprenderá a publicar seu próprio tutorial no GitHub.
 
 O HUB possui dois tipos de conteúdo:
 
-- **Trilhas:** áreas principais, como Unity, Web e Python.
+- **Trilhas:** áreas principais, como Unity, Web e Python. Uma trilha também pode ficar dentro de outra, como VR dentro de Unity.
 - **Materiais:** tutoriais individuais dentro de uma trilha.
 
 Todos utilizam arquivos Markdown (`.md`).
@@ -79,6 +79,20 @@ tags:
 
 Não é necessário cadastrar as tags em outro lugar.
 
+**Para colocar a trilha dentro de outra**, informe o nome da pasta da trilha-mãe. O card aparecerá dentro dela, e a busca por tag continuará encontrando a trilha:
+
+```yaml
+pai: 'unity'
+```
+
+**Para indicar outras trilhas no fim da página**, liste o nome das pastas. O título e a descrição são copiados de cada trilha:
+
+```yaml
+relacionadas:
+  - 'git'
+  - 'boas-praticas'
+```
+
 ### Criar o conteudo.md
 
 Na mesma pasta, crie `conteudo.md`.
@@ -99,17 +113,17 @@ Explique o assunto.
 Adicione textos, vídeos e links.
 ```
 
-**Pronto!** Após a publicação, o HUB criará automaticamente um card para essa trilha.
+**Pronto!** Após a publicação, o HUB criará automaticamente um card para essa trilha e, quando ela tiver materiais, a árvore de conteúdos.
 
 ---
 
 ## Como adicionar um tutorial a uma trilha existente
 
-Se você deseja adicionar um tutorial de Unity, por exemplo, **não precisa criar outra trilha**.
+Se você deseja adicionar um tutorial de VR, por exemplo, **não precisa criar outra trilha**.
 
 Acesse:
 
-`docs/trilhas/tutoriais/unity/materiais/`
+`docs/trilhas/tutoriais/vr/materiais/`
 
 ### Criar a pasta do tutorial
 
@@ -122,7 +136,7 @@ Digite:
 A estrutura ficará assim:
 
 ```text
-unity/
+vr/
 └── materiais/
     └── meu-tutorial/
         ├── index.md
@@ -137,10 +151,7 @@ No `index.md`, utilize:
 ---
 title: "Meu primeiro tutorial"
 description: "Aprenda a realizar uma tarefa na Unity."
-pai: null
-nivel: 0
-ordem: 0
-destino: "conteudo.md"
+pai: "01-introducao-a-vr"
 ---
 ```
 
@@ -150,62 +161,45 @@ destino: "conteudo.md"
 |---|---|
 | `title` | Nome do card. |
 | `description` | Descrição curta. |
-| `nivel` | Profundidade do conteúdo: raiz em `0`, filhos em `1`, netos em `2` e assim por diante. |
-| `ordem` | Define a posição entre conteúdos com o mesmo pai. |
-| `destino` | Define o arquivo ou link aberto ao clicar. |
-| `pai` | Nome exato da pasta do conteúdo pai; use `null` na raiz. |
+| `pai` | Nome exato da pasta do conteúdo pai. Somente a raiz da árvore não tem pai. |
+| `ordem` | Opcional. Define a posição entre conteúdos com o mesmo pai. Sem ele, vale a ordem alfabética das pastas. |
+| `destino` | Opcional. Define o arquivo ou link aberto ao clicar. Sem ele, abre o `conteudo.md`. |
 
 ### Como montar uma árvore de conteúdos?
 
-Cada material informa seu pai no `index.md`. A introdução geral é a raiz da árvore e utiliza:
+Cada material informa seu pai no `index.md`. Por exemplo, a árvore de VR é formada assim:
 
 ```yaml
-title: 'Introdução geral'
-pai: null
-nivel: 0
-ordem: 0
+# 01-introducao-a-vr: a raiz, sem pai
+title: 'Introdução à VR'
+
+# 04-quest-preparacao: filho da raiz
+title: 'Prepare o headset e o projeto para o Meta Quest'
+pai: '01-introducao-a-vr'
+
+# 05-quest-primeira-cena: neto da raiz
+title: 'Crie sua primeira cena interativa no Quest'
+pai: '04-quest-preparacao'
 ```
 
-Para ligar a introdução à Unity à introdução geral, use o nome da pasta da introdução geral:
-
-```yaml
-title: 'Introdução à Unity'
-pai: '01-preparacao-do-ambiente'
-nivel: 1
-ordem: 0
-```
-
-Para colocar áudio como filho da introdução à Unity:
-
-```yaml
-title: 'Áudio: organização e reprodução'
-pai: '04-primeira-execucao-na-unity'
-nivel: 2
-ordem: 1
-```
-
-Os exemplos mostram os campos de hierarquia. Cada `index.md` também precisa de `description` e `destino`, apresentados no modelo acima.
+Os exemplos mostram os campos de hierarquia. Cada `index.md` também precisa de `description`.
 
 O resultado é uma árvore com relações explícitas:
 
 ```text
-Introdução geral
-├── Introdução à Unity
-│   ├── Interface
-│   └── Áudio
-├── Introdução ao Git/GitHub
-└── Introdução ao C#
+Introdução à VR
+├── Prepare o projeto para o Google Cardboard
+│   └── Execute a cena de exemplo no celular
+└── Prepare o headset e o projeto para o Meta Quest
+    └── Crie sua primeira cena interativa no Quest
 ```
 
-- A árvore possui uma única raiz, com `pai: null` e `nivel: 0`.
-- Cada filho informa o nome da pasta do pai e usa um nível a mais que ele.
-- `ordem` organiza os filhos de um mesmo pai. Em caso de empate, vale a ordem alfabética das pastas.
+- A árvore possui uma única raiz, sem `pai`.
 - O pai precisa existir na mesma pasta `materiais`. Um conteúdo não pode ser pai de si mesmo nem formar um ciclo com outros materiais.
 - Use títulos sem numeração. A posição na árvore é definida pelos metadados.
+- Não escreva links de "Anterior" e "Próximo": a seção **Navegação** é criada a partir da árvore.
 
-As linhas da árvore indicam parentesco por assunto. Explique no texto os pré-requisitos de estudo ou de prática, incluindo links para outros ramos quando necessário. Em telas menores, a árvore fica vertical e mantém a indentação dos filhos.
-
-Preencha `pai` em todos os materiais da trilha ao adotar esse modelo. Trilhas sem esse campo continuam usando a apresentação antiga, por níveis. Os campos `ramo`, `etapa` e `ordem_ramo` não são usados na árvore de pais e filhos.
+As linhas da árvore indicam parentesco por assunto. Explique no texto os pré-requisitos de estudo ou de prática, incluindo links para outras trilhas quando necessário. Em telas menores, a árvore fica vertical e mantém a indentação dos filhos.
 
 Para títulos com `C#`, use aspas simples no YAML, como `title: 'Introdução ao C#'`.
 
@@ -283,9 +277,12 @@ Depois de criar os arquivos:
 
 1. Confira se o `index.md` possui todos os campos necessários.
 2. Verifique se os links e imagens estão corretos.
-3. Clique em **Commit changes** para salvar.
-4. Caso esteja trabalhando em uma branch, envie um **Pull Request** para revisão.
-5. Após a alteração entrar na branch `main`, o GitHub Actions atualizará o HUB automaticamente.
+3. Clique em **Commit changes** para salvar em uma branch.
+4. Envie um **Pull Request**. O GitHub confere os metadados, os links e a geração do site, e aponta o que precisa ser corrigido.
+5. Confira o resultado da verificação e faça o merge.
+6. Após a alteração entrar na branch `main`, o GitHub Actions atualizará o HUB automaticamente.
+
+Se a verificação encontrar um erro em um commit feito direto na `main`, o site anterior continua no ar até a correção.
 
 Você pode acompanhar a publicação na aba [Actions](https://github.com/LDTTFURB/LDTT_Capacitacao/actions).
 

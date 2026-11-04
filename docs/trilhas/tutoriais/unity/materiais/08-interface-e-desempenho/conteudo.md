@@ -6,7 +6,7 @@ Verifique se a interface funciona nas telas previstas, acompanhe a abertura de p
 
 ## Pré-requisitos
 
-Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar interface sem concluir padrões de projeto ou áudio.
+Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../../../boas-praticas/materiais/nomenclatura-e-arquivos/conteudo.md). Você pode estudar interface sem concluir padrões de projeto ou áudio.
 
 ## Configuração da interface
 

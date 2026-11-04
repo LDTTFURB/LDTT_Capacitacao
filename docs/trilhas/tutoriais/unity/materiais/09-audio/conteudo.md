@@ -6,7 +6,7 @@ Conheça o gerenciamento de sons, os materiais de áudio e a nomenclatura utiliz
 
 ## Pré-requisitos
 
-Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Você pode estudar áudio sem concluir o material de interface.
+Concluir [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e consultar [Nomenclatura e organização de arquivos](../../../boas-praticas/materiais/nomenclatura-e-arquivos/conteudo.md). Você pode estudar áudio sem concluir o material de interface.
 
 ## Gerenciamento de áudio
 

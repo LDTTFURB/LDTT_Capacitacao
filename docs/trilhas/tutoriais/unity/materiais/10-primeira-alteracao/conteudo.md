@@ -6,7 +6,7 @@ Conclua uma tarefa pequena e reúna evidências de que ela funciona.
 
 ## Pré-requisitos
 
-Concluir [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md), [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e [Nomenclatura e organização de arquivos](../05-nomenclatura-e-arquivos/conteudo.md). Trabalhe na sua branch e combine uma tarefa pequena com a equipe. Estude interface, áudio ou padrões de projeto conforme a necessidade dessa tarefa.
+Concluir [Introdução ao Git/GitHub](../../../git/materiais/introducao-git/conteudo.md), [Introdução à Unity](../04-primeira-execucao-na-unity/conteudo.md) e [Nomenclatura e organização de arquivos](../../../boas-praticas/materiais/nomenclatura-e-arquivos/conteudo.md). Trabalhe na sua branch e combine uma tarefa pequena com a equipe. Estude interface, áudio ou padrões de projeto conforme a necessidade dessa tarefa.
 
 ## Execute a tarefa
 

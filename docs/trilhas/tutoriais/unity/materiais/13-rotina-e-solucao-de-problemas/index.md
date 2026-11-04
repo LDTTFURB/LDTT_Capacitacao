@@ -1,8 +1,6 @@
 ---
-title: 'Rotina de trabalho e solução de problemas'
-description: 'Consolide a integração e aprenda a comunicar impedimentos à equipe.'
+referencia: 'boas-praticas/rotina-e-solucao-de-problemas'
 pai: '01-preparacao-do-ambiente'
 nivel: 1
 ordem: 3
-destino: 'conteudo.md'
 ---

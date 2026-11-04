@@ -6,7 +6,7 @@ Abra o projeto, execute a cena inicial e reconheça seus principais elementos.
 
 ## Pré-requisitos
 
-Concluir [Introdução geral](../01-preparacao-do-ambiente/conteudo.md) e [Introdução ao Git/GitHub](../03-git-clone-e-branches/conteudo.md), da ramificação Git/GitHub. Tenha a pasta do projeto no computador e a versão correta do Editor instalada.
+Concluir [Introdução geral](../01-preparacao-do-ambiente/conteudo.md) e [Introdução ao Git/GitHub](../../../git/materiais/introducao-git/conteudo.md), da ramificação Git/GitHub. Tenha a pasta do projeto no computador e a versão correta do Editor instalada.
 
 ## O que você vai aprender
 

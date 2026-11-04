@@ -1,0 +1,114 @@
+.arvore-hierarquia {
+  --linha: var(--md-default-fg-color--lightest);
+  --conector: var(--md-default-fg-color--lighter, #d9dde3);
+  --espaco-ramos: 20px;
+  margin: 24px 0;
+}
+/* Reinicia tambem os espacamentos de listas aplicados pelo tema. */
+.md-typeset nav.arvore-hierarquia ul,
+.md-typeset nav.arvore-hierarquia ul > li {
+  list-style: none; margin: 0; padding: 0; min-width: 0; box-sizing: border-box;
+}
+.md-typeset nav.arvore-hierarquia ul > li { position: relative; }
+.arvore-hierarquia .arvore-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 14px;
+  border: 1px solid var(--linha); border-radius: 10px; color: inherit;
+  text-decoration: none; overflow-wrap: break-word;
+}
+.arvore-hierarquia .arvore-card:hover,
+.arvore-hierarquia .arvore-card:focus-visible { border-color: var(--md-primary-fg-color); }
+.arvore-hierarquia .arvore-card strong { font-size: 14px; }
+.arvore-hierarquia .arvore-card span { font-size: 12px; opacity: .75; }
+.arvore-hierarquia .arvore-raiz > .arvore-card {
+  position: relative; max-width: 360px; margin: 0 auto;
+}
+.arvore-hierarquia .arvore-raiz > .arvore-card::after {
+  content: ''; position: absolute; left: 50%; top: 100%; height: 20px;
+  border-left: 2px solid var(--conector);
+}
+/* Cada filho desenha o seu segmento vertical e o cotovelo ate o card.
+   O ultimo segmento termina na ligacao, sem prolongar a linha para baixo. */
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos {
+  margin-left: 12px; padding-left: 20px;
+}
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li { padding-top: 16px; }
+.arvore-hierarquia ul.arvore-filhos > li::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -20px;
+  border-left: 2px solid var(--conector);
+}
+.arvore-hierarquia ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
+.arvore-hierarquia ul.arvore-filhos > li::after {
+  content: ''; position: absolute; left: -20px; top: 38px; width: 20px;
+  border-top: 2px solid var(--conector);
+}
+/* A linha horizontal cobre o intervalo inteiro entre os ramos da raiz. */
+.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
+  display: flex; align-items: flex-start; gap: var(--espaco-ramos);
+  margin: 0; padding: 40px 0 0;
+}
+.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li {
+  flex: 1 1 0; padding: 0;
+}
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before {
+  top: -20px; bottom: auto; left: calc(var(--espaco-ramos) / -2);
+  right: calc(var(--espaco-ramos) / -2); height: 0;
+  border: 0; border-top: 2px solid var(--conector);
+}
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before { left: 50%; }
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before { right: 50%; height: 0; }
+.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
+  left: 50%; top: -20px; width: 0; height: 20px;
+  border: 0; border-left: 2px solid var(--conector);
+}
+/* Os ramos internos não podem ganhar mais recuo a cada geração.
+   O nível inicial (raiz e seus quatro filhos) permanece intacto. */
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos {
+  position: relative;
+  margin: 0;
+  padding: 12px 0 0;
+}
+/* Liga o centro do card-pai ao trilho lateral dos filhos. */
+.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -10px;
+  width: calc(50% + 10px);
+  border-top: 2px solid var(--conector);
+}
+.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 12px;
+  border-left: 2px solid var(--conector);
+}
+/* Mantém os cards descendentes alinhados à coluna do pai. */
+.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::before {
+  left: -10px;
+}
+.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::after {
+  left: -10px;
+  width: 10px;
+}
+@media (max-width: 900px) {
+  .arvore-hierarquia .arvore-raiz > .arvore-card { margin: 0; max-width: none; }
+  .arvore-hierarquia .arvore-raiz > .arvore-card::after { display: none; }
+  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
+    display: block; margin-left: 12px; padding: 0 0 0 20px;
+  }
+  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li { padding-top: 16px; }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before,
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before,
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before {
+    top: 0; bottom: 0; left: -20px; right: auto; height: auto;
+    border: 0; border-left: 2px solid var(--conector);
+  }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
+  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
+    left: -20px; top: 38px; width: 20px; height: 0;
+    border: 0; border-top: 2px solid var(--conector);
+  }
+}
+.arvore-hierarquia .arvore-raiz:not(.arvore-com-filhos) > .arvore-card::after { display: none; }

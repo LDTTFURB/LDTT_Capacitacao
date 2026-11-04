@@ -62,12 +62,14 @@ if TUTORIAIS.exists():
 
             pasta = quote(arquivo.parent.name, safe="")
 
-            # Novo formato: abre conteudo.md.
-            # Compatibilidade com trilhas antigas: abre index.md.
-            if (arquivo.parent / "conteudo.md").exists():
-                link = f"tutoriais/{pasta}/conteudo/"
-            else:
-                link = f"tutoriais/{pasta}/"
+            conteudo = arquivo.parent / "conteudo.md"
+            if not conteudo.is_file():
+                raise FileNotFoundError(
+                    f"{arquivo}: falta {conteudo}. "
+                    "Cada trilha precisa de index.md e conteudo.md; "
+                    "o card deve abrir sempre o conteudo.md."
+                )
+            link = f"tutoriais/{pasta}/conteudo/"
 
             nomes_tags = ", ".join(tags)
 

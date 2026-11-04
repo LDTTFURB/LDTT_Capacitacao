@@ -1,4 +1,12 @@
 
+/* Usa a largura da janela, com uma margem lateral pequena para o conteúdo. */
+.md-main__inner.md-grid {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  padding-inline: clamp(8px, 1.5vw, 24px);
+}
+
 /* Mantém as três abas visíveis em telas menores */
 .md-tabs {
   display: block !important;

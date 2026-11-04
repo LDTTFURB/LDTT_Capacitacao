@@ -32,10 +32,21 @@ features = [
   "navigation.top",
 ]
 
-[project.theme.palette]
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
 scheme = "default"
 primary = "blue"
 accent = "blue"
+toggle.icon = "lucide/sun"
+toggle.name = "Ativar modo escuro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "blue"
+accent = "blue"
+toggle.icon = "lucide/moon"
+toggle.name = "Ativar modo claro"
 
 
 [project.extra]

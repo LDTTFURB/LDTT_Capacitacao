@@ -186,7 +186,7 @@ def renderizar(trilha: str, cards: dict, dados: dict) -> str:
         partes.append("</li>")
         return "\n".join(partes)
 
-    return '<nav class="arvore-hierarquia" aria-label="Árvore dos materiais">\n<ul class="arvore-topo">\n' + no(raiz, True) + '\n</ul>\n</nav>'
+    return '<nav class="arvore-hierarquia" aria-label="Árvore dos materiais" tabindex="0">\n<ul class="arvore-topo">\n' + no(raiz, True) + '\n</ul>\n</nav>'
 
 
 def redirecionamento(url: str) -> str:

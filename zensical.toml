@@ -16,6 +16,7 @@ nav = [
 
 extra_javascript = [
   "assets/js/header-home.js",
+  "assets/js/arvore.js",
   "assets/js/trilhas-filter.js",
   "assets/js/tema.js",
   "assets/js/voltar.js",

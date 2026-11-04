@@ -1,142 +1,134 @@
 .arvore-hierarquia {
-  --linha: var(--md-default-fg-color--lightest);
-  --conector: var(--md-default-fg-color--lighter, #d9dde3);
-  --espaco-ramos: 20px;
+  --largura-card: 232px;
+  --respiro-card: 12px;
+  --espaco-nivel: 48px;
+  --cor-linha: var(--md-default-fg-color--lighter, #9aa3ad);
   margin: 24px 0;
+  padding: 12px 8px 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cor-linha) transparent;
 }
-/* Reinicia tambem os espacamentos de listas aplicados pelo tema. */
+
+/* A largura de cada ramo vem dos seus descendentes. Isso coloca cada pai
+   exatamente acima do conjunto de filhos, em vez de empilhar cards em colunas. */
 .md-typeset nav.arvore-hierarquia ul,
-.md-typeset nav.arvore-hierarquia ul > li {
-  list-style: none; margin: 0; padding: 0; min-width: 0; box-sizing: border-box;
+.md-typeset nav.arvore-hierarquia li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
-.md-typeset nav.arvore-hierarquia ul > li { position: relative; }
+.md-typeset nav.arvore-hierarquia ul.arvore-topo {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  min-width: 100%;
+}
+.md-typeset nav.arvore-hierarquia li {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  min-width: calc(var(--largura-card) + 2 * var(--respiro-card));
+  padding: 0 var(--respiro-card);
+}
+.md-typeset nav.arvore-hierarquia ul.arvore-filhos {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: max-content;
+  padding-top: var(--espaco-nivel);
+}
+
 .arvore-hierarquia .arvore-card {
-  position: relative; z-index: 1; display: flex; flex-direction: column;
-  gap: 8px; padding: 14px; background: var(--md-default-bg-color);
-  border: 1px solid var(--linha); border-radius: 10px; color: inherit;
-  text-decoration: none; overflow-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: var(--largura-card);
+  min-height: 142px;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+.arvore-hierarquia .arvore-raiz > .arvore-card {
+  min-height: 104px;
 }
 .arvore-hierarquia .arvore-card:hover,
-.arvore-hierarquia .arvore-card:focus-visible { border-color: var(--md-primary-fg-color); }
-.arvore-hierarquia .arvore-card strong { font-size: 14px; }
-.arvore-hierarquia .arvore-card span { font-size: 12px; opacity: .75; }
-.arvore-hierarquia .arvore-raiz > .arvore-card {
-  position: relative; max-width: 360px; margin: 0 auto;
+.arvore-hierarquia .arvore-card:focus-visible {
+  border-color: var(--md-primary-fg-color);
 }
-.arvore-hierarquia .arvore-raiz > .arvore-card::after {
-  content: ''; position: absolute; left: 50%; top: 100%; height: 20px;
-  border-left: 2px solid var(--conector);
+.arvore-hierarquia .arvore-card strong {
+  font-size: 14px;
 }
-/* Cada filho desenha o seu segmento vertical e o cotovelo ate o card.
-   O ultimo segmento termina na ligacao, sem prolongar a linha para baixo. */
-.md-typeset nav.arvore-hierarquia ul.arvore-filhos {
-  margin-left: 12px; padding-left: 20px;
+.arvore-hierarquia .arvore-card span {
+  font-size: 12px;
+  opacity: .78;
 }
-.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li { padding-top: 16px; }
-.arvore-hierarquia ul.arvore-filhos > li::before {
-  content: ''; position: absolute; top: 0; bottom: 0; left: -20px;
-  border-left: 2px solid var(--conector);
-}
-.arvore-hierarquia ul.arvore-filhos > li:last-child::before { bottom: auto; height: 38px; }
-.arvore-hierarquia ul.arvore-filhos > li::after {
-  content: ''; position: absolute; left: -20px; top: 38px; width: 20px;
-  border-top: 2px solid var(--conector);
-}
-/* A linha horizontal cobre o intervalo inteiro entre os ramos da raiz. */
-.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
-  display: flex; align-items: flex-start; gap: var(--espaco-ramos);
-  margin: 0; padding: 40px 0 0;
-}
-.md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li {
-  flex: 1 1 0; padding: 0;
-}
-.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before {
-  top: -20px; bottom: auto; left: calc(var(--espaco-ramos) / -2);
-  right: calc(var(--espaco-ramos) / -2); height: 0;
-  border: 0; border-top: 2px solid var(--conector);
-}
-.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before { left: 50%; }
-.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before { right: 50%; height: 0; }
-.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
-  left: 50%; top: -20px; width: 0; height: 20px;
-  border: 0; border-left: 2px solid var(--conector);
-}
-/* Ramos internos: trilho lateral, cotovelo acima do card e entrada
-   vertical no centro. A coluna não ganha recuo a cada nível. */
-.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos {
-  position: relative;
-  margin: 0;
-  padding: 18px 0 0;
-}
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::before {
-  content: '';
-  position: absolute;
-  top: 18px;
-  left: -10px;
-  width: calc(50% + 10px);
-  border-top: 2px solid var(--conector);
-}
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos::after {
+
+/* Uma linha desce do centro do pai até a barra dos irmãos. */
+.arvore-hierarquia ul.arvore-filhos::before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
-  height: 18px;
-  border-left: 2px solid var(--conector);
+  height: calc(var(--espaco-nivel) / 2);
+  border-left: 2px solid var(--cor-linha);
 }
-.md-typeset nav.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li {
-  padding-top: 22px;
+
+/* Cada metade da barra liga o centro do filho ao centro do vizinho. */
+.arvore-hierarquia ul.arvore-filhos > li::before,
+.arvore-hierarquia ul.arvore-filhos > li::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--espaco-nivel) / -2);
+  width: 50%;
+  border-top: 2px solid var(--cor-linha);
 }
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::before {
-  left: -10px;
+.arvore-hierarquia ul.arvore-filhos > li::before {
+  left: 0;
 }
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li:last-child::before {
-  height: 11px;
+.arvore-hierarquia ul.arvore-filhos > li::after {
+  right: 0;
 }
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li::after {
-  left: -10px;
-  top: 11px;
-  width: calc(50% + 10px);
+.arvore-hierarquia ul.arvore-filhos > li:first-child::before,
+.arvore-hierarquia ul.arvore-filhos > li:last-child::after {
+  display: none;
 }
-.arvore-hierarquia ul.arvore-filhos > li > ul.arvore-filhos > li > .arvore-card::before {
+
+/* O último trecho chega ao centro superior do próprio card. */
+.arvore-hierarquia ul.arvore-filhos > li > .arvore-card::before {
   content: '';
   position: absolute;
   left: 50%;
-  top: -11px;
-  height: 11px;
-  border-left: 2px solid var(--conector);
+  top: calc(var(--espaco-nivel) / -2);
+  height: calc(var(--espaco-nivel) / 2);
+  border-left: 2px solid var(--cor-linha);
 }
+
 @media (max-width: 900px) {
-  .arvore-hierarquia .arvore-raiz > .arvore-card { margin: 0; max-width: none; }
-  .arvore-hierarquia .arvore-raiz > .arvore-card::after { display: none; }
-  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos {
-    display: block; position: relative; margin: 0; padding: 18px 0 0;
+  .arvore-hierarquia {
+    --largura-card: 200px;
+    --respiro-card: 8px;
+    --espaco-nivel: 40px;
   }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos::before {
-    content: ''; position: absolute; top: 18px; left: -10px;
-    width: calc(50% + 10px); border-top: 2px solid var(--conector);
+  .arvore-hierarquia .arvore-card {
+    min-height: 136px;
+    padding: 12px;
   }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos::after {
-    content: ''; position: absolute; top: 0; left: 50%;
-    height: 18px; border-left: 2px solid var(--conector);
-  }
-  .md-typeset nav.arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li { padding-top: 22px; }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::before,
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:first-child::before,
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before {
-    top: 0; bottom: 0; left: -10px; right: auto; height: auto;
-    border: 0; border-left: 2px solid var(--conector);
-  }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li:last-child::before {
-    bottom: auto; height: 11px;
-  }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li::after {
-    left: -10px; top: 11px; width: calc(50% + 10px); height: 0;
-    border: 0; border-top: 2px solid var(--conector);
-  }
-  .arvore-hierarquia .arvore-raiz > ul.arvore-filhos > li > .arvore-card::before {
-    content: ''; position: absolute; left: 50%; top: -11px;
-    height: 11px; border-left: 2px solid var(--conector);
+  .arvore-hierarquia .arvore-raiz > .arvore-card {
+    min-height: 96px;
   }
 }
-.arvore-hierarquia .arvore-raiz:not(.arvore-com-filhos) > .arvore-card::after { display: none; }

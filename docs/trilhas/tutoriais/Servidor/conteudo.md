@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+  - toc
+---
 Do servidor pode ser isso aqui
 # Introdução ao Servidor
 

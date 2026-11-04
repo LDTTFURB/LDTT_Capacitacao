@@ -1,10 +1,37 @@
 
-/* Usa a largura da janela, com uma margem lateral pequena para o conteúdo. */
-.md-main__inner.md-grid {
-  width: 100%;
-  max-width: none;
+/* Cabeçalho, abas e conteúdo compartilham os mesmos limites em todas as páginas. */
+:root {
+  --ldtt-margem-pagina: clamp(16px, 2vw, 32px);
+}
+
+.md-grid {
+  width: calc(100% - 2 * var(--ldtt-margem-pagina));
+  max-width: 1680px;
+  margin-inline: auto;
   box-sizing: border-box;
-  padding-inline: clamp(8px, 1.5vw, 24px);
+  padding-inline: 0;
+}
+
+.md-content {
+  min-width: 0;
+}
+
+.md-content__inner {
+  margin-inline: 0;
+}
+
+.md-header__button.md-logo {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
+
+.md-header__option .md-header__button {
+  margin-inline-end: 0;
+  padding-inline-end: 0;
+}
+
+.md-tabs__item:first-child {
+  padding-inline-start: 0;
 }
 
 /* Mantém as três abas visíveis em telas menores */
